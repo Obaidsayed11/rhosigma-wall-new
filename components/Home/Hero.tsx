@@ -1,119 +1,139 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Button from "../Common/Button";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-function Hero() {
-  const images = [
-    "/quarter-turn-actuator-2.png",
-    "/quarter-turn-actuator-3.png",
-    "/quarter-turn-actuator-2.png",
-    "/quarter-turn-actuator-3.png",
-  ];
+const shippinggroups = [
+  {
+    image:
+      "/courousal-1.jpg",
+    title: "Road Transport",
+  },
+  {
+    image:
+     "/courousal-2.jpg",
+    title: "Air Cargo",
+  },
+  {
+    image:
+     "/courousal-3.jpg",
+    title: "Sea Freight",
+  },
+  // {
+  //   image:
+  //     "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1920&h=1080&fit=crop",
+  //   title: "Rail Cargo",
+  // },
+  // {
+  //   image:
+  //     "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1920&h=1080&fit=crop",
+  //   title: "Express Delivery",
+  // },
+  // {
+  //   image:
+  //     "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&h=1080&fit=crop",
+  //   title: "Warehousing",
+  // },
+  // {
+  //   image:
+  //     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&h=1080&fit=crop",
+  //   title: "Cold Chain",
+  // },
+  // {
+  //   image:
+  //     "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop",
+  //   title: "Last Mile",
+  // },
+];
 
+function Hero() {
   return (
     <>
-      <section className="group overflow-hidden xl:h-[800px] bg-white ">
-        <div className="w-full absolute top-0  h-[60%] "></div>
-        <div className="w-full relative min-h-fit md:min-h-[80vh] lg:min-h-[100vh]  flex flex-col gap-2 py-10">
-          <motion.h1
-            className=" text-4xl text-text-primary   small:text-5xl  sm:text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl font-meidum    text-center leading-[1]  "
-            initial={{ transform: "translateY(-100%)", opacity: 0 }}
-            animate={{ opacity: 1, transform: "translateY(0px)" }}
+      <section className="relative w-full overflow-hidden bg-white">
+        {/* Full Width Swiper Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          animate={{ opacity: 1 }}
+          className="w-full relative"
+        >
+          <Swiper
+            modules={[Autoplay, Pagination, EffectFade]}
+            slidesPerView={1}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={1000}
+            loop={true}
+            // pagination={{
+            //   clickable: true,
+            //   dynamicBullets: false,
+            // }}
+            className="w-full h-[600px] md:h-[700px] lg:h-[800px]"
           >
-            Unleash Innovation With Rhosigma
-          </motion.h1>
-
-          <motion.div
-            initial={{ transform: "translateY(100%)", opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut", type: "tween" }}
-            animate={{ opacity: 1, transform: "translateY(0px)" }}
-            className="w-full relative h-auto flex items-start gap-1 justify-center -mt-1 sm:-mt-5 lg:-mt-10 xl:-mt-10"
-          >
-            <Swiper
-              modules={[Autoplay, EffectFade]}
-              effect="fade"
-              fadeEffect={{ crossFade: false }}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }}
-              loop={true}
-              loopAdditionalSlides={2}
-              speed={800}
-              pagination={false}
-              allowTouchMove={false}
-              watchSlidesProgress={true}
-              className="w-[500px] h-[500px]"
-            >
-              {images.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <Image
-                    src={image}
-                    alt="Container image"
-                    height={1300}
-                    width={1300}
-                    className="w-[500px] object-cover relative h-[500px] floating"
+            {shippinggroups.map((group, slideIndex) => (
+              <SwiperSlide key={slideIndex}>
+                <div className="relative w-full h-full">
+                  {/* Background Image */}
+                  <img
+                    src={group.image}
+                    alt={group.title}
+                    className="w-full h-full object-cover"
                   />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
-          {/* <div className="w-full relative  h-auto flex  items-center justify-center flex-col gap-5 lg:gap-10 xl:gap-20 lg:-mt-40  xl:-mt-54 -mt-10 sm:-mt-20 md:-mt-28">
-            <Button
-              css={
-                "bg-white text-primary  font-medium text-base lg:text-lg cursor-pointer w-fit py-2 px-3 lg:py-3 lg:px-5 hover:bg-primary hover:text-white "
-              }
-              text={"Get a Quote"}
-              isIcons={true}
-            />
-            <p className=" line-clamp-3 lg:line-clamp-5 text-sm sm:text-base lg:text-lg xl:text-xl font-medium  text-text-secondary text-center">
-              At Lanjekar Logistics, we specialize in delivering reliable,
-              efficient, and secure transportation solutions across PAN India.
-              With a strong commitment to excellence and customer satisfaction,
-              we ensure that every shipment reaches its destination safely and
-              on time.
-              <br />
-              What sets us apart is our team of highly trained drivers and logistics professionals who handle every consignment with precision and care. Whether it&apos;s industrial cargo, retail goods, or customized freight solutions, we bring years of experience and dedication to every mile we cover.
-            </p>
-          </div> */}
-        </div>
+
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/40"></div>
+
+                  {/* Text overlay - centered */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+                      <motion.h1
+                        className="text-4xl text-white small:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium leading-[1.1]"
+                        initial={{ transform: "translateY(-50px)", opacity: 0 }}
+                        animate={{ opacity: 1, transform: "translateY(0px)" }}
+                        transition={{
+                          duration: 0.8,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        Unleash Innovation With{" "}
+                        <span className="text-tertiary">Rhosigma</span>
+                      </motion.h1>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </section>
 
       <style jsx global>{`
-        .floating {
-          animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-
         .swiper-pagination {
-          display: none !important;
+          bottom: 30px !important;
         }
 
-        .swiper-slide {
-          opacity: 0 !important;
+        .swiper-pagination-bullet {
+          background: white;
+          opacity: 0.5;
+          width: 12px;
+          height: 12px;
         }
 
-        .swiper-slide-active {
-          opacity: 1 !important;
-        }
-
-        .swiper-slide-duplicate-active {
-          opacity: 1 !important;
+        .swiper-pagination-bullet-active {
+          opacity: 1;
+          background: #2563eb;
+          width: 40px;
+          border-radius: 6px;
         }
       `}</style>
     </>

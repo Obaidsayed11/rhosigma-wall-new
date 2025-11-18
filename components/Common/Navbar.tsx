@@ -7,6 +7,19 @@ import { usePathname } from "next/navigation";
 import SideBar from "./SideBar";
 function Navbar() {
   const path = usePathname();
+
+  const productItems = [
+    { title: "Rhosigma Acutators", url: "/rhosigma-acutators" },
+    { title: "Electric Acutator", url: "/electric-acutator" },
+    { title: "Rhosigma Valve", url: "/rhosigma-valve" },
+    { title: "Motorized Valve", url: "/motorized-valve" },
+    { title: "Solenoid Valve", url: "/solenoid-valve" },
+    { title: "Position Indicators", url: "/position-indicators" },
+    { title: "Valve Positioner", url: "/valve-positioner" },
+    { title: "Valve Accessories", url: "/valve-accessories" },
+    { title: "Namur Solenoid Valve", url: "/namur-solenoid-valve" },
+  ];
+
   return (
     <nav className="w-full sticky top-0 z-50  h-fit bg-background  border-t border-b  border-gray-300  ">
       <section className="w-full relative h-auto flex items-center justify-between gap-1 logistics-container">
@@ -40,7 +53,7 @@ function Navbar() {
           >
             About us
           </Link>
-          <Link
+          {/* <Link
             href={"/services"}
             className={`  text-base  border-l px-5 py-3 xl:px-8 xl:py-5 c border-gray-300  cursor-pointer  ${
               path == "/services"
@@ -49,18 +62,45 @@ function Navbar() {
             } `}
           >
             Services
-          </Link>
+          </Link> */}
 
-          <Link
-            href={"/technology"}
-            className={`  text-base  border-l border-r px-5 py-3 xl:px-8 xl:py-5 c border-gray-300  cursor-pointer  ${
-              path == "/technology"
-                ? " text-primary  font-semibold"
-                : " text-text-secondary font-medium"
-            } `}
-          >
-            Products
-          </Link>
+          <div className="relative group">
+            <Link
+              href={"/products"}
+              className={`
+      text-base border-l border-r px-5 py-3 xl:px-8 xl:py-5 border-gray-300 cursor-pointer
+      ${
+        path == "/products"
+          ? "text-primary font-semibold"
+          : "text-text-secondary font-medium"
+      }
+    `}
+            >
+              Products
+            </Link>
+
+            {/* Dropdown */}
+            <div
+              className="
+      absolute top-10 left-0 w-56 bg-white shadow-lg border border-gray-300 rounded-md
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-300 z-50
+    "
+            >
+              {productItems.map((item, i) => (
+  <Link
+    key={i}
+    href={`/products?item=${item.url.replace("/", "")}`}
+    className="
+      block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black
+    "
+  >
+    {item.title}
+  </Link>
+))}
+
+            </div>
+          </div>
         </ul>
 
         <section className=" relative flex items-center justify-center">

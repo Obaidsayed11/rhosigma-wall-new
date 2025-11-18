@@ -15,7 +15,7 @@ function AboutHero() {
       <motion.section initial={{opacity:0,scale:0}} animate={{scale:1,opacity:1}} transition={{duration:.5,type:'spring', ease:'easeInOut'}}  className="w-full h-full absolute top-0 left-0 logistics-container  lg:gap-y-10 right-0 grid grid-cols-2">
         <span className="w-full relative h-auto grid items-center justify-start ">
           <Image
-            src={"/about-image.webp"}
+            src={"/quarter-turn-actuator-2.png"}
             alt="about image 1"
             height={500}
             width={500}
@@ -25,7 +25,7 @@ function AboutHero() {
 
         <span className="w-full relative h-auto grid items-center justify-end ">
           <Image
-            src={"/about-image2.webp"}
+            src={"/about-hero-2.png"}
             alt=""
             height={400}
             width={400}
@@ -35,7 +35,7 @@ function AboutHero() {
 
         <span className="w-full relative h-auto grid items-center justify-start  lg:px-10">
           <Image
-            src={"/about-image3.webp"}
+          src={"/about-hero-3.png"}
             alt=""
             height={400}
             width={400}
@@ -45,7 +45,7 @@ function AboutHero() {
 
         <span className="w-full relative h-auto grid items-center justify-end  lg:px-10 ">
           <Image
-            src={"/about-image4.webp"}
+            src={"/about-hero-5.png"}
             alt=""
             height={400}
             width={400}
@@ -53,9 +53,9 @@ function AboutHero() {
           />
         </span>
 
-        <span className="w-full relative h-auto  hidden sm:grid items-center justify-center col-span-2 ">
+        <span className="w-full relative h-auto  hidden sm:grid items-center justify-center col-span-2  ">
           <Image
-            src={"/about-image5.webp"}
+             src={"/about-hero-4.png"}
             alt=""
             height={400}
             width={400}

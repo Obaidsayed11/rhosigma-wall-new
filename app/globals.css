@@ -8,8 +8,10 @@
   --foreground: hsl(0, 0%, 9%);
   --primary: #2e5bab;
   --secondary: hsl(0, 0%, 98%);
+--tertiary: linear-gradient(111deg, #0d9de0 0%, #2e5bab 100%);
   --text-primary: hsl(0, 0%, 0%);
   --text-secondary: hsl(0, 0%, 26%);
+  --text-tertiary:linear-gradient(111deg, #0d9de0 0%, #2e5bab 100%);
 
   --hover-color: hsl(0, 0%, 92%);
 
@@ -246,6 +248,13 @@ body {
 }
 
 
+.text-tertiary {
+  background: var(--tertiary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 
 
 

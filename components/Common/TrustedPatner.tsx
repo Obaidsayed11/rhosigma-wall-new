@@ -1,24 +1,16 @@
 'use client'
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import axios from "axios";
-
 import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 import { NEXT_PUBLIC_API_URL } from "@/config";
 import { ClientsProps } from "@/types/Interface";
 
 const clientData = [
   {
-    logo: "/logo.png",
-    alt: "",
-    companyName: "oss"
-  },
-  {
-   logo: "/logo.png",
+    logo: "/client-image.png",
     alt: "",
     companyName: "oss"
   },
@@ -32,9 +24,13 @@ const clientData = [
     alt: "",
     companyName: "oss"
   },
-
   {
-   logo: "/logo.png",
+    logo: "/logo.png",
+    alt: "",
+    companyName: "oss"
+  },
+  {
+    logo: "/logo.png",
     alt: "",
     companyName: "oss"
   },
@@ -46,71 +42,98 @@ const clientData = [
 ];
 
 function TrustedPatner() {
-  const [clients,setClients]=useState<ClientsProps[]>([])
-   async function fetchclient() {
-    try{
-      const response =await axios.get(`${NEXT_PUBLIC_API_URL}/clients`)
-      console.log(response.data.Clients)
-      setClients(response.data.Clients)
+  const [clients, setClients] = useState<ClientsProps[]>([]);
+  
+  async function fetchclient() {
+    try {
+      const response = await axios.get(`${NEXT_PUBLIC_API_URL}/clients`);
+      console.log(response.data.Clients);
+      setClients(response.data.Clients);
+    } catch (error) {
+      console.log(error, 'error');
     }
-    catch(error){
-      console.log(error,'error')
-    }
-   }
+  }
    
-   useEffect(()=>{
-    fetchclient()
-   },[])
+  useEffect(() => {
+    fetchclient();
+  }, []);
+
+  // Use fetched clients if available, otherwise use default clientData
+  const displayClients = clients.length > 0 ? clients : clientData;
 
   return (
     <>
-      <section className="w-full relative h-auto hidden md:grid grid-cols-6 items-center justify-center logistics-container">
-        
-        {clientData.map((client, index) => (
-          <span className=" border h-full py-5 md:py-10 px-5 md:px-10 flex items-center justify-center border-gray-200 " key={index}>
-            {/* <Image
-              src={`${NEXT_PUBLIC_API_URL}${client.logo}`}
-              alt={client.companyName}
-              height={500}
-              width={500}
-              className=" max-w-full  object-contain max-h-[100px] grayscale  "
-            /> */}
-              <Image
-              src={client.logo}
-              alt={client.companyName}
-              height={500}
-              width={500}
-              className=" max-w-full  object-contain max-h-[100px] grayscale  "
-            />
-          </span>
-        ))}
-      </section>
-
-
-      <section className="w-full relative h-auto md:hidden block items-center justify-center logistics-container">
+      {/* Desktop Version - Marquee Effect */}
+      <section className="w-full relative h-auto hidden md:block logistics-container overflow-hidden">
         <Swiper
-          slidesPerView={'auto'}
+          modules={[Autoplay]}
           spaceBetween={0}
-          pagination={{
-            clickable: true,
+          slidesPerView="auto"
+          speed={3000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
-          breakpoints= {{
-            300: {
-                slidesPerView: 3,
+          loop={true}
+          allowTouchMove={false}
+          breakpoints={{
+            768: {
+              slidesPerView: 4,
             },
-        }}
-          modules={[Pagination]}
-          className="mySwiper w-full  relative h-auto  logistics-container "
+            1024: {
+              slidesPerView: 6,
+            },
+          }}
         >
-          {clients.map((client, index) => (
+          {[...displayClients, ...displayClients].map((client, index) => (
             <SwiperSlide key={index}>
-              <span className=" border h-[100px]   py-5 md:py-10 px-5 md:px-10 flex items-center justify-center border-gray-200 " >
+              <span className="border h-full py-5 md:py-10 px-5 md:px-10 flex items-center justify-center border-gray-200">
                 <Image
-                src={`${NEXT_PUBLIC_API_URL}${client.logo}`}
+                  src={clients.length > 0 ? `${NEXT_PUBLIC_API_URL}${client.logo}` : client.logo}
                   alt={client.companyName}
                   height={500}
                   width={500}
-                  className=" max-w-full  object-contain max-h-[60px] grayscale  "
+                  className="max-w-full object-contain max-h-[100px]  transition-all duration-300"
+                />
+              </span>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* Mobile Version - Marquee Effect */}
+      <section className="w-full relative h-auto md:hidden block logistics-container overflow-hidden">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={0}
+          slidesPerView="auto"
+          speed={2500}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={true}
+          allowTouchMove={false}
+          breakpoints={{
+            320: {
+              slidesPerView: 3,
+            },
+            640: {
+              slidesPerView: 4,
+            },
+          }}
+        >
+          {[...displayClients, ...displayClients].map((client, index) => (
+            <SwiperSlide key={index}>
+              <span className="border h-[100px] py-5 px-5 flex items-center justify-center border-gray-200">
+                <Image
+                  src={clients.length > 0 ? `${NEXT_PUBLIC_API_URL}${client.logo}` : client.logo}
+                  alt={client.companyName}
+                  height={500}
+                  width={500}
+                  className="max-w-full object-contain max-h-[60px] "
                 />
               </span>
             </SwiperSlide>

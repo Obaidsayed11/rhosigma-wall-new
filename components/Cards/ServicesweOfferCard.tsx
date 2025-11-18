@@ -21,7 +21,7 @@ function ServicesweOfferCard({
         direction ? " flex-row-reverse" : ""
       } `}
     >
-      <section className="w-full relative h-full  hover:bg-hover-section transition-colors ease-in-out  bg-background">
+      <section className="w-full relative h-full  hover:bg-hover-section transition-colors ease-in-out  bg-section">
         <div className=" p-5 xl:p-10 w-full relative h-auto flex flex-col gap-3  ">
           <h2 className=" text-xl lg:text-3xl xl:text-4xl  font-bold lg:font-semibold text-text-secondary ">
             {title}
@@ -51,7 +51,7 @@ function ServicesweOfferCard({
       </section>
       <Image
         src={image}
-        className="w-full relaticve min-h-[320px] max-h-[320px] h-full object-cover  "
+        className="w-full relaticve min-h-[320px] max-h-[320px] h-full object-contain bg-white  "
         alt={title}
         height={1000}
         width={1000}

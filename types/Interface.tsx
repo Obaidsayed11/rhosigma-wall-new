@@ -43,6 +43,17 @@ export interface WhyChooseCardProps {
   children?: React.ReactNode;
 }
 
+export interface WhyChooseRhCardProps {
+  number: string;
+  title?: string;
+  subtitle?: string;
+  subtitlecss?: string;
+  description?: string;
+  css?: string;
+  descriptioncss?: string;
+  children?: React.ReactNode;
+}
+
 export interface IndustriesCardprops {
   image: string;
   title: string;
@@ -117,6 +128,11 @@ export interface ServiceWeOfferProps {
 
 export interface WhyChooseUsProps {
   data: WhyChooseCardProps[];
+  isquoteShow: boolean;
+}
+
+export interface WhyChooseUsRhProps {
+  data: WhyChooseRhCardProps[];
   isquoteShow: boolean;
 }
 

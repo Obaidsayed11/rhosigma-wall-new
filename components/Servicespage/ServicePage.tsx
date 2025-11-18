@@ -6,7 +6,7 @@ import Button from "@/components/Common/Button";
 import Image from "next/image";
 import SectionWrapper from "@/components/Common/SectionWrapper";
 import WhyChooseUs from "@/components/Common/WhyChooseUs";
-import OurShippingMethods from "@/components/Home/OurShippingMethods";
+import OurShippingMethods from "@/components/Home/WhereToInstall";
 import IndustriesWeServe from "@/components/Common/IndustriesWeServe";
 import ClientSection from "@/components/About/ClientSection";
 import OurNetwork from "@/components/Common/OurNetwork";
