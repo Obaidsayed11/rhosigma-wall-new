@@ -3,7 +3,9 @@ import ServicesweOfferCard from "../Cards/ServicesweOfferCard";
 import { ServiceWeOfferProps } from "@/types/Interface";
 function ServicesWeOffer({ data }: ServiceWeOfferProps) {
   return (
-    <section className="w-full relative  border border-gray-200 logistics-container h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 ">
+<section className="w-full relative border border-gray-200 logistics-container h-auto grid grid-cols-1 lg:grid-cols-1">
+
+
       {data.map((item, index) => (
         <ServicesweOfferCard
           slug={item.slug}

@@ -16,11 +16,14 @@ function ServicesweOfferCard({
   slug
 }: ServicesweOfferCardprops) {
   return (
-    <section
-      className={`w-full relative h-full items-center    md:flex ${
-        direction ? " flex-row-reverse" : ""
-      } `}
-    >
+   <section
+
+  className={`w-full relative h-full 
+    flex flex-col
+    lg:flex-row ${direction ? "lg:flex-row-reverse" : ""}`}
+>
+
+
       <section className="w-full relative h-full  hover:bg-hover-section transition-colors ease-in-out  bg-section">
         <div className=" p-5 xl:p-10 w-full relative h-auto flex flex-col gap-3  ">
           <h2 className=" text-xl lg:text-3xl xl:text-4xl  font-bold lg:font-semibold text-text-secondary ">
@@ -42,20 +45,27 @@ function ServicesweOfferCard({
           )}
           {
             toGoL2Page &&
-            <Link href={`/services/${slug}`} className="text-base font-medium  text-primary px-5 py-2 gap-2  bg-transparent border border-primary hover:bg-primary hover:text-white w-fit flex items-center justify-center">
-              Explore Service
+            <Link href={`/products/${slug}`} className="text-base font-medium  text-primary px-5 py-2 gap-2  bg-transparent border border-primary hover:bg-primary hover:text-white w-fit flex items-center justify-center">
+              Explore Product
                <LuArrowUpRight className="text-[20px]" />
             </Link>
           }
         </div>
       </section>
       <Image
-        src={image}
-        className="w-full relaticve min-h-[320px] max-h-[320px] h-full object-contain bg-white  "
-        alt={title}
-        height={1000}
-        width={1000}
-      />
+  src={image}
+  className="
+    w-full 
+    h-auto 
+    max-h-[260px] 
+    lg:min-h-[320px] lg:max-h-[320px]
+    object-contain bg-white
+  "
+  alt={title}
+  height={1000}
+  width={1000}
+/>
+
     </section>
   );
 }

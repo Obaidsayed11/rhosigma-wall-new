@@ -22,7 +22,6 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
   return (
     <section className="w-full h-auto">
       <div className="logistics-container flex flex-col gap-10">
-        
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 xl:mt-[-28]">
           Our Products
         </h2>
@@ -48,8 +47,8 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
                     relative text-[14px] md:text-base text-white font-normal group transition-transform duration-300 ease-in-out transform hover:translate-x-2
                   "
                 >
-             <span
-  className="
+                  <span
+                    className="
     relative 
     text-slate-300 
     group-hover:text-white 
@@ -58,29 +57,29 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
     text-sm sm:text-base
     block
   "
->
-  {product.title}
+                  >
+                    {product.title}
 
-  {/* underline animation across whole width */}
-  <span
-    className="
-      absolute 
-      left-0 
-      -bottom-[2px] 
-      h-[2px] 
-      w-0 
-      bg-white 
-      transition-all 
-      duration-300 
-      group-hover:w-full
-      block
-    "
-  ></span>
-</span>
+                    {/* underline animation across whole width */}
+                    <span
+                      className="
+                          absolute 
+                          left-0 
+                          -bottom-[2px] 
+                          h-[2px] 
+                          w-0 
+                          bg-white 
+                          transition-all 
+                          duration-300 
+                          group-hover:w-full
+                          block
+                        "
+                    ></span>
+                  </span>
 
                   <ChevronRight
-                  width={20}
-                  height={20}
+                    width={20}
+                    height={20}
                     className="
                       min-w-5 min-h-5 
                       text-blue-500
@@ -99,6 +98,5 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
     </section>
   );
 }
-
 
 export default ProductsSection;

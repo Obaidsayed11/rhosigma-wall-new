@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
@@ -7,21 +7,83 @@ import { usePathname } from "next/navigation";
 import SideBar from "./SideBar";
 function Navbar() {
   const path = usePathname();
+    const [currentDateTime, setCurrentDateTime] = useState({
+    date: "",
+    time: "",
+    day: ""
+  });
 
-  const productItems = [
-    { title: "Rhosigma Acutators", url: "/rhosigma-acutators" },
-    { title: "Electric Acutator", url: "/electric-acutator" },
-    { title: "Rhosigma Valve", url: "/rhosigma-valve" },
-    { title: "Motorized Valve", url: "/motorized-valve" },
-    { title: "Solenoid Valve", url: "/solenoid-valve" },
-    { title: "Position Indicators", url: "/position-indicators" },
-    { title: "Valve Positioner", url: "/valve-positioner" },
-    { title: "Valve Accessories", url: "/valve-accessories" },
-    { title: "Namur Solenoid Valve", url: "/namur-solenoid-valve" },
+  useEffect(() => {
+  const updateDateTime = () => {
+    const now = new Date();
+
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    const date = now.toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    const time = now.toLocaleTimeString("en-IN", {
+      hour: "2-digit",
+      minute: "2-digit",
+     
+    });
+
+    setCurrentDateTime({
+      date,
+      time,
+      day: dayNames[now.getDay()],
+    });
+  };
+
+  updateDateTime();
+  const interval = setInterval(updateDateTime, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+
+ const productItems = [
+  { title: "Rhosigma Actuators", slug: "rhosigma-actuators" },
+  { title: "Electric Actuator", slug: "electric-actuator" },
+  { title: "Rhosigma Valve", slug: "rhosigma-valve" },
+  { title: "Motorized Valve", slug: "motorized-valve" },
+  { title: "Solenoid Valve", slug: "solenoid-valve" },
+  { title: "Position Indicators", slug: "position-indicators" },
+  { title: "Valve Positioner", slug: "valve-positioner" },
+  { title: "Valve Accessories", slug: "valve-accessories" },
+  { title: "NAMUR Solenoid Valve", slug: "namur-solenoid-valve" },
+];
+
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About us" },
+    { href: "/services", label: "Services" },
+    { href: "/technology", label: "Technology" },
   ];
 
   return (
     <nav className="w-full sticky top-0 z-50  h-fit bg-background  border-t border-b  border-gray-300  ">
+        <div className="w-full bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-b border-gray-100">
+        <div className="logistics-container py-2 px-4 flex items-center justify-between text-xs sm:text-sm">
+          <div className="flex items-center gap-2 text-gray-600">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span className="font-medium">{currentDateTime.day}</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline">{currentDateTime.date}</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-600">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="font-medium tabular-nums">{currentDateTime.time}</span>
+          </div>
+        </div>
+      </div>
       <section className="w-full relative h-auto flex items-center justify-between gap-1 logistics-container">
         <Link href={"/"}>
           <Image
@@ -53,52 +115,38 @@ function Navbar() {
           >
             About us
           </Link>
-          {/* <Link
-            href={"/services"}
-            className={`  text-base  border-l px-5 py-3 xl:px-8 xl:py-5 c border-gray-300  cursor-pointer  ${
-              path == "/services"
-                ? " text-primary  font-semibold"
-                : " text-text-secondary font-medium"
-            } `}
-          >
-            Services
-          </Link> */}
 
           <div className="relative group">
-            <Link
-              href={"/products"}
+            <button
               className={`
       text-base border-l border-r px-5 py-3 xl:px-8 xl:py-5 border-gray-300 cursor-pointer
       ${
-        path == "/products"
+        path.startsWith("/products")
           ? "text-primary font-semibold"
           : "text-text-secondary font-medium"
       }
     `}
             >
               Products
-            </Link>
+            </button>
 
             {/* Dropdown */}
             <div
               className="
-      absolute top-10 left-0 w-56 bg-white shadow-lg border border-gray-300 rounded-md
-      opacity-0 invisible group-hover:opacity-100 group-hover:visible
-      transition-all duration-300 z-50
-    "
+    absolute top-10 left-0 w-56 bg-white shadow-lg border border-gray-300 rounded-md
+    opacity-0 invisible group-hover:opacity-100 group-hover:visible
+    transition-all duration-300 z-50
+  "
             >
               {productItems.map((item, i) => (
-  <Link
-    key={i}
-    href={`/products?item=${item.url.replace("/", "")}`}
-    className="
-      block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black
-    "
-  >
-    {item.title}
-  </Link>
-))}
-
+                <Link
+                  key={i}
+                  href={`/products/${item.slug}`}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black"
+                >
+                  {item.title}
+                </Link>
+              ))}
             </div>
           </div>
         </ul>

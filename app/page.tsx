@@ -19,6 +19,7 @@ import HomeAbout from "@/components/Home/HomeAbout";
 import GlobalLeader from "@/components/Home/GlobalLeader";
 import ProductsSection from "@/components/Home/ProductsSection";
 import WhereToInstall from "@/components/Home/WhereToInstall";
+import { productsData } from "@/lib/productsTitle";
 
 const ServiceweOffer: ServicesweOfferCardprops[] = [
   {
@@ -71,13 +72,13 @@ const ServiceweOffer: ServicesweOfferCardprops[] = [
 
 const OurProductsData: ServicesweOfferCardprops[] = [
   {
-    title: "Actuator Operated ",
+    title: "Actuator Operated",
     subtitle: "Rubber Lined Lug Type Butterfly Valve",
     descrtiption:
       " Rhosigma offers rubber lined butterfly valve for HVAC & utilities. These valves are truly Fit & Forget Valve which requires minimum maintenance. The body line which also function as per soft seat, comes in integrally moulded version and offers bi-directional sealing against vacuum up to the pressure of PN 10 / PN 16 Size Range: 1.1/2” to 28” (50mm to 700mm).",
     image: "/product-1.jpg",
     direction: false,
-    slug: "",
+    slug: "pneumatic-actuator-operated-rubber-lined-lug-type-butterfly-valve",
   },
   {
     title: "Rotary Actuator",
@@ -85,7 +86,7 @@ const OurProductsData: ServicesweOfferCardprops[] = [
     descrtiption:
       "Standard Rhosigma actuator operated investment casting WCB/CF8/CF8M ball valve in three piece design. Engineering for multiple ON/OFF operations in the down stream.",
     image: "/product-2.jpg",
-    slug: "",
+    slug: "pneumatic-rotary-actuator-operated-3-pcs-ball-valve",
     direction: true,
   },
   {
@@ -95,7 +96,7 @@ const OurProductsData: ServicesweOfferCardprops[] = [
       "Rhosigma offers rubber lined butterfly valve for HVAC & utilities. These valves are truly Fit & Forget Valve which requires minimum maintenance. The body line which also function as per soft seat, comes in integrally moulded version and offers bi-directional sealing against vacuum up to the pressure of PN 10 / PN 16",
     direction: false,
     image: "/product-3.jpg",
-    slug: "",
+    slug: "pneumatic-actuator-operated-rubber-lined-butterfly-valve",
   },
   {
     title: "Rack and Pinion Actuator",
@@ -104,7 +105,7 @@ const OurProductsData: ServicesweOfferCardprops[] = [
       "A pneumatic rack and pinion actuator is a type of device used in industrial automation and control systems to convert the linear motion of compressed air into rotary motion. This actuator is commonly employed to control valves in various applications, such as in the oil and gas industry, chemical processing plants, water treatment facilities, and other industrial settings",
     direction: true,
     image: "/product-4.jpg",
-    slug: "",
+    slug: "rack-and-pinion-actuator",
   },
 
   {
@@ -114,7 +115,7 @@ const OurProductsData: ServicesweOfferCardprops[] = [
       "Rhosigma offers rubber lined butterfly valve for HVAC & utilities. These valves are truly Fit & Forget Valve which requires minimum maintenance. The body line which also function as per soft seat, comes in integrally moulded version and offers bi-directional sealing against vacuum up to the pressure of PN 10 / PN 16 Size Range: 1.1/2” to 28” (50mm to 700mm).",
     direction: false,
     image: "/product-5.jpg",
-    slug: "",
+    slug: "pneumatic-actuator-operated-rubber-lined-double-flange-type-butterfly-valve",
   },
 ];
 
@@ -168,262 +169,13 @@ const GlobalLeadersData = [
   },
   {
     icon: <Cog className="w-10 h-10  text-primary" />,
-    title: "Food & Beverage",
+    title: "Service",
     description:
       "Your satisfaction is the best reward for us. We are looking forward to your visit for common development.",
   },
 ];
 
-const prodcutsData = [
-  {
-    title: "Rack and Pinion Actuator",
-    url: "/home",
-  },
-  {
-    title: "Scotch Yoke Actuatorr",
-    url: "/home",
-  },
-  {
-    title: "PTL Series Electrical Actuator",
-    url: "/home",
-  },
-  {
-    title: "PVQ explosion proof electric actuator",
-    url: "/home",
-  },
-  {
-    title: "PHQ explosion proof electric actuator",
-    url: "/home",
-  },
-  {
-    title: "aum multi turn electrical actuator",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Rotary Actuator Operated 3 Pcs Ball Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Rotary Actuator Operated 2 Pcs Ball Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Pneumatic Rotary Actuator Operated 3 Way / 4 Way Ball Valve Screwed End / Flanged End.",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Rotary Actuator Operated Wafer Type Ball Valver",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Rotary Actuator Operated FEP / PFA Lined Ball Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Rotary Actuator Operated UPVC Ball Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Rotary Actuator Operated PP Ball Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated Rubber Lined Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Pneumatic Actuator Operated Rubber Lined Double Flange Type Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated Rubber Lined Lug Type Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated Spherical Disc Valve 150# & 300#",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated FEP / PFA Lined Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated PTFE Lined Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Pneumatic Actuator Operated Aluminium Pressure Die Cast Butterly Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated Wafer Type Metal Seated Damper Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated Double Flange Fabricated Damper Valve",
-    url: "/home",
-  },
-  {
-    title: "Pneumatic Actuator Operated UPVC Wafer Type Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Pneumatic Actuator Operated Wafer Type / TC End Butterfly Valve For Pharma Application.",
-    url: "/home",
-  },
-  {
-    title: "Electrical On/off, Modulating, Intergral Starter UPVC Ball Valve",
-    url: "/home",
-  },
-  {
-    title: "Motorized 2 Pcs Ball Valve Flanged End ASA 150#/300#",
-    url: "/home",
-  },
-  {
-    title: "Motorized 2 Pcs FEP / PFA Lined Ball Valve Flanged End",
-    url: "/home",
-  },
-  {
-    title: "Motorized 3 WAY / 4 WAY BALL VALVE",
-    url: "/home",
-  },
-  {
-    title:
-      "Motorized 3 pcs ball valve Screwed end / Flanged end ASA 150# / 300#",
-    url: "/home",
-  },
-  {
-    title: "Motorized PP Ball Valve",
-    url: "/home",
-  },
-  {
-    title: "Motorized Wafer type Ball Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Elecrical On/off, Moudlating And Intergral Starter FEP / PFA Lined Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Electrical On/Off, Modulating And Integral Starter Spherical Disc Valve 150# & 300#",
-    url: "/home",
-  },
-  {
-    title: "Motorized Double Flange Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title: "Motorized Wafer type Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title: "Motorize Rubber Seated Lug type Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Electrical ON/OFF, Modulating And Integral Started PTFE Lined Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Modulating and Integral Starter Double Flange Fabricated Damper Valve",
-    url: "/home",
-  },
-  {
-    title: "Motorized aluminium butterfly valve",
-    url: "/home",
-  },
-  {
-    title: "Motorized UPVC Wafer Type Butterfly Valve",
-    url: "/home",
-  },
-  {
-    title: "2 2 way pilot operated diaphragm type solenoid valve",
-    url: "/home",
-  },
-  {
-    title: "2/2 Way Semi lift Diaphragm Solenoid Valve",
-    url: "/home",
-  },
-  {
-    title: "2/2 Way Pilot operated piston type steam solenoid valve",
-    url: "/home",
-  },
-  {
-    title: "Aluminium Flame Proof Type Solenoid Valvese",
-    url: "/home",
-  },
-  {
-    title: "2/2 Way Direct Acting Solenoid Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "2/2 Way Pneumatic Single & Double Acting Operated Angle Type On/Off Control Valve",
-    url: "/home",
-  },
-  {
-    title: "Model APL2N (Micro Limit Switches)",
-    url: "/home",
-  },
-  {
-    title: "Model APL3N (Micro Limit Switches)",
-    url: "/home",
-  },
-  {
-    title: "Model APL4N (Micro Limit Switches)",
-    url: "/home",
-  },
-  {
-    title: "Model ITS 100 (Micro Limit Switches)",
-    url: "/home",
-  },
-  {
-    title: "Yt-1000 Electro Pneumatic Valve Positioner",
-    url: "/home",
-  },
-  {
-    title: "L8A-100 Electro Pneumatic Valve Positioner",
-    url: "/home",
-  },
-  {
-    title: "PSP-25 Series Smart Positioner",
-    url: "/home",
-  },
-  {
-    title: "Quarter Turn Manual Over Ride / Gear Box",
-    url: "/home",
-  },
-  {
-    title: "Air Filter Regulator",
-    url: "/home",
-  },
-  {
-    title: "5/2 Way Single / Double Coil",
-    url: "/home",
-  },
-  {
-    title: "3/2 Way Single / Double Coil",
-    url: "/home",
-  },
-  {
-    title:
-      "Electrical ON/OFF, Modulating And ntegral Starter Wafer Type Metal Seated Damper Valve",
-    url: "/home",
-  },
-  {
-    title:
-      "Electrical on/off, modulating and integral starter Wafer Type / TC End Butter Valve For Pharma Application",
-    url: "/home",
-  },
-];
+
 
 const IndustriesWeServedata = [
   {
@@ -619,7 +371,7 @@ export default function Home() {
       </SectionWrapper> */}
 
       <SectionWrapper css="bg-primary xl:mt[-30]" title={""} description={""}>
-        <ProductsSection data={prodcutsData} />
+        <ProductsSection data={productsData} />
       </SectionWrapper>
     </>
   );

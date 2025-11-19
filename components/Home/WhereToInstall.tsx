@@ -76,6 +76,7 @@ function WhereToInstall() {
       <div className="w-full mx-auto ">
         <Swiper
         modules={[Autoplay]}
+        
         spaceBetween={0}
         slidesPerView="auto"
         speed={3000}

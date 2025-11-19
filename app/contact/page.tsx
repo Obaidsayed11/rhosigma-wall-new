@@ -40,18 +40,18 @@ function page() {
           </p>
 
           <Link
-            href={"melto:info@lanjekarlogistics.com"}
+            href={"melto:info@rhosigma.in"}
             className="text-sm md:text-base w-fit lg:text-lg font-medium text-text-secondary"
           >
             {" "}
-            info@lanjekarlogistics.com
+            info@rhosigma.in
           </Link>
 
           <Link
-            href={"tel:+91 8655587403"}
+            href={"tel:+91 86555 87403"}
             className="text-text-secondary w-fit font-medium text-sm md:text-base lg:text-lg "
           >
-            +91  8655587403
+            +91 86555 87403
           </Link>
 
           <Link

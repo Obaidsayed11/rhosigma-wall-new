@@ -18,17 +18,17 @@ function GlobalLeaderCard({
         width={1000}
         className="h-[35px] w-[35px] object-contain  justify-center "
       /> */}
-      <div className="h-[35px] w-[35px] flex items-center justify-center">
+      <div className="h-[35px] w-[35px] flex items-center justify-center mx-auto">
   {icon}
 </div>
 
-      <h2 className="  text-xl md:text-2xl lg:text-2xl font-semibold text-text-secondary  text-center">{title}</h2>
+      <h2 className="  text-xl md:text-2xl lg:text-2xl font-semibold text-text-secondary  text-center mx-auto">{title}</h2>
       {/* {
         subtitle &&
     //   <p className="  text-base md:text-lg font-semibold text-text-secondary">{subtitle}</p>
 
       } */}
-      <p className="text-sm md:text-base font-normal text-text-secondary">{description}</p>
+      <p className="text-sm md:text-base font-normal text-text-secondary text-center mx-auto">{description}</p>
 
      
     </div>
