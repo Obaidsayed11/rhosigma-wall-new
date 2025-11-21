@@ -11,7 +11,7 @@ export default function TeamCards() {
       bio: "He is 45 years of age with graduation in B.Com with main subject of account. He started his own proprietorship firm in 2010 and after decade of experience in business with valve automation, started a manufacturing unit of valve automation in 2017."
     },
     {
-      id: 2,8
+      id: 2,
       name: "MR. Saeed Lanjekar",
       role: "DIRECTOR - ADMINISTRATION",
       bio: "He is 39 years of age with graduation in BBA and after his graduation started a business in the field of fabrication in PVC and aluminium doors, partition and windows and after decade of experience in business. He is having decade of years experience to manage operations."
