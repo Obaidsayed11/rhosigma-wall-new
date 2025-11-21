@@ -1,9 +1,9 @@
 import { SectionWrapperprops } from "@/types/Interface";
 import React from "react";
 
-function SectionWrapper({ title, description, children ,css }: SectionWrapperprops) {
+function SectionWrapper({ title, description, children ,css, id }: SectionWrapperprops) {
   return (
-    <section className={`w-full relative h-auto flex flex-col gap-10 py-10 lg:py-20 ${css} mt-[-10]`}>
+    <section className={`w-full relative h-auto flex flex-col gap-10 py-10 lg:py-20 ${css} mt-[-10]`} id={id}>
       <div className="flex flex-col gap-2 lg:gap-4 items-center justify-center  logistics-container ">
         <h2 className="font-semibold text-3xl md:text-4xl lg:text-5xl text-text-primary  text-center">
           {title}

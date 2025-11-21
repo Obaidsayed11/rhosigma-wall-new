@@ -35,8 +35,8 @@ function page() {
           </h2>
 
           <p className=" text-sm md:text-base lg:text-lg font-medium  text-text-secondary">
-            Email, call or complete the form to know how Lanjekar Logistics can
-            solve your logistics problem.
+            Email, call or complete the form to know how Rhosigma can
+            solve your Valve problem.
           </p>
 
           <Link

@@ -143,10 +143,10 @@ function PrivacyPolicyPage() {
             <li>
               Email:{" "}
               <Link
-                href="mailto:sales@lanjekarlogistics.com"
+                href="mailto:sales@rhosigma.in"
                 className="text-blue-600 underline"
               >
-               sales@lanjekarlogistics.com
+               sales@rhosigma.in
               </Link>
             </li>
             <Link href={"tel:(+91)  8655587403"}>Phone: (+91)  8655587403</Link>

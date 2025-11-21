@@ -5,12 +5,12 @@ import { motion } from "motion/react"
 
 function AboutHero() {
   return (
-    <section className="w-full relative  flex  items-start justify-center  mb-5 lg:mb-20 py-16 md:py-24 lg:py-28 xl:py-32  h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[100vh] ">
+    <section className="w-full relative  flex  items-start justify-center  mb-5 lg:mb-20 py-16 md:py-24 lg:py-28 xl:py-32  h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[100vh]  ">
       <BlogpageBanner
         firstchunktitle={"They call us the"}
         maintitle={"people"}
-        lastchunktitle="behind shipments"
-        btntext="Get a Quote"
+        lastchunktitle="behind Valves "
+        btntext="Who We Are"
       />
       <motion.section initial={{opacity:0,scale:0}} animate={{scale:1,opacity:1}} transition={{duration:.5,type:'spring', ease:'easeInOut'}}  className="w-full h-full absolute top-0 left-0 logistics-container  lg:gap-y-10 right-0 grid grid-cols-2">
         <span className="w-full relative h-auto grid items-center justify-start ">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ProductDataProps } from "@/lib/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay, FreeMode } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, DownloadCloudIcon, DownloadIcon } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -108,72 +108,75 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             </div>
 
             {/* Thumbnail Gallery */}
-            {hasMultipleImages && (
-              <div className="relative mt-4 flex items-center xl:w-[500px] justify-center mx-auto">
-                <button
-                  onClick={handlePrevClick}
-                  className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 -ml-2 sm:-ml-4 flex-shrink-0 "
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
+          {/* Thumbnail Gallery */}
+{hasMultipleImages && (
+  <div className="relative mt-4 flex items-center justify-center mx-auto w-full max-w-md xl:max-w-[500px]">
+    <button
+      onClick={handlePrevClick}
+      className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 flex-shrink-0"
+    >
+      <ChevronLeft className="w-5 h-5" />
+    </button>
 
-                <div className="flex-grow mx-2 sm:w-full xl:px-10">
-                  <Swiper
-                    modules={[FreeMode, Thumbs]}
-                    onSwiper={setThumbsSwiper}
-                    spaceBetween={0}
-                    slidesPerView={4}
-                    freeMode={true}
-                    watchSlidesProgress
-                    breakpoints={{
-                      640: {
-                        slidesPerView: 3,
-                        spaceBetween: 12,
-                      },
-                      1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 0,
-                      },
-                    }}
-                  >
-                    {product.images.map((img, idx) => (
-                      <SwiperSlide key={idx}>
-                        <div
-                          onClick={() => handleThumbnailClick(idx)}
-                          className={`
-      relative 
-      aspect-square 
-      w-15 sm:w-15 xl:w-30  xl:h-40 mx:auto 
-      rounded-lg overflow-hidden 
-      cursor-pointer 
-      transition-all duration-200
-      ${
-        activeIndex === idx
-          ? "border-3 border-primary"
-          : "border-2 border-gray-200"
-      }
-    `}
-                        >
-                          <Image
-                            src={img}
-                            alt={`Thumbnail ${idx + 1}`}
-                            fill
-                            className="object-cover p-1 sm:p-2"
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
+    <div className="flex-1 mx-2 sm:mx-3 overflow-hidden">
+      <Swiper
+        modules={[FreeMode, Thumbs]}
+        onSwiper={setThumbsSwiper}
+        spaceBetween={8}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress
+        breakpoints={{
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 12,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 16,
+          },
+        }}
+      >
+        {product.images.map((img, idx) => (
+          <SwiperSlide key={idx}>
+            <div
+              onClick={() => handleThumbnailClick(idx)}
+              className={`
+                relative 
+                aspect-square 
+                w-full
+                rounded-lg 
+                overflow-hidden 
+                cursor-pointer 
+                transition-all 
+                duration-200
+                ${
+                  activeIndex === idx
+                    ? "border-2 border-primary"
+                    : "border-2 border-gray-200"
+                }
+              `}
+            >
+              <Image
+                src={img}
+                alt={`Thumbnail ${idx + 1}`}
+                fill
+                className="object-cover "
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
 
-                <button
-                  onClick={handleNextClick}
-                  className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 -mr-2 sm:-mr-4 flex-shrink-0"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            )}
+    <button
+      onClick={handleNextClick}
+      className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 flex-shrink-0"
+    >
+      <ChevronRight className="w-5 h-5" />
+    </button>
+  </div>
+)}
           </div>
 
           {/* PRODUCT INFORMATION */}
@@ -188,16 +191,16 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-[#0d9de0] transition font-semibold">
+              <button className="flex-1 bg-primary text-white px-6 py-3 hover:bg-[#0d9de0] transition font-semibold">
                 Request Quote
               </button>
               {product.brochureUrl && (
                 <a
                   href={product.brochureUrl}
                   download
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition font-semibold"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300  hover:bg-gray-50 transition font-semibold"
                 >
-                  <svg
+                  {/* <svg
                     className="w-5 h-5"
                     fill="none"
                     stroke="currentColor"
@@ -209,7 +212,8 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                       strokeWidth={2}
                       d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     />
-                  </svg>
+                  </svg> */}
+                  <DownloadIcon />
                   Download Brochure
                 </a>
               )}

@@ -18,6 +18,7 @@ export interface SectionWrapperprops {
   description: string;
   children: React.ReactNode;
   css: string;
+  id? : string
 }
 
 export interface ServicesweOfferCardprops {

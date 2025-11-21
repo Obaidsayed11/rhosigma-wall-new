@@ -95,7 +95,7 @@ setSubmitting(false)
             Get Quote
           </DialogTitle>
           <DialogDescription className="text-lg font-medium text-text-secondary">
-            We will help you solve your logistics problems
+           Instant Quote for Your Needs
           </DialogDescription>
         </DialogHeader>
         <form

@@ -103,28 +103,28 @@ function Footer() {
     </span>
   </Link>
 
-  <Link href="/products" className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
+  {/* <Link href="/products" className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
     <span className="relative block">
       Products
       <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
     </span>
-  </Link>
+  </Link> */}
 
-  <Link href="/team" className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
+  <Link href="/about/#team"  className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
     <span className="relative block">
       Our Team
       <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
     </span>
   </Link>
 
-  <Link href="/where-to-install" className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
-    <span className="relative block">
+  <Link href="#whereToinstall" className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
+    <span className="relative block" >
       Where To Install
       <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
     </span>
   </Link>
 
-  <Link href="/certification" className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
+  <Link href="/about/#certifications"  className="group text-text-secondary text-base md:text-lg font-normal w-fit transition-all">
     <span className="relative block">
       Our Certification
       <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
@@ -165,7 +165,7 @@ function Footer() {
 </Link>
 
 <Link
-  href="mailto:info@lanjekarlogistics.com"
+  href="mailto:info@rhosigma.in"
   className="group text-text-secondary hover:text-primary text-base md:text-lg font-normal flex items-center gap-3 transition-all w-fit"
 >
   <div className="w-10 h-10 rounded-[10px] bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] flex items-center justify-center flex-shrink-0">
@@ -173,7 +173,7 @@ function Footer() {
   </div>
 
   <span className="relative after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-    info@lanjekarlogistics.com
+    info@rhosigma.in
   </span>
 </Link>
 
@@ -233,22 +233,20 @@ function Footer() {
 
       {/* COLUMN 4 — Address */}
       <div className="flex flex-col gap-5">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-text-secondary">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-text-primary">
           Rhosigma
         </h2>
 
         <p className="text-text-secondary text-base md:text-lg font-normal leading-relaxed">
-          Plot No. 10, Transport Nagar, Near XYZ Road, Wagholi, Pune – 412207,
-          Maharashtra, India
+          602-B, Virani Business Center, Opp Bharat Gears Limited, Kausa Mumbra, Thane 400612.
         </p>
 
-        <h3 className="font-semibold text-text-secondary text-lg md:text-xl pt-2">
+        <h3 className="font-semibold text-text-primary text-lg md:text-xl pt-2">
           Branch Office
         </h3>
 
         <p className="text-text-secondary text-base md:text-lg font-normal leading-relaxed">
-          ABC Business Park, 2nd Floor, Office 12, Pimpri, Pune – 411018,
-          India
+         602-B, Virani Business Center, Opp Bharat Gears Limited, Kausa Mumbra, Thane 400612.
         </p>
       </div>
     </section>
@@ -262,7 +260,7 @@ function Footer() {
         className="w-[30px] h-[30px] object-contain"
       />
 
-      <div className="w-fit relative px-10 xl:px-20 h-auto flex flex-col lg:flex-row items-center gap-3 md:gap-5 border-r border-l justify-center border-white">
+      <div className="w-fit relative px-10 xl:px-20 h-auto flex flex-col lg:flex-row items-center gap-3 md:gap-5 border-r border-l justify-center border-primary">
       <Link
   className="group flex items-center gap-3 text-base lg:text-lg text-text-secondary hover:text-primary transition-all font-normal w-fit"
   href={"tel:8655587403"}
@@ -278,14 +276,14 @@ function Footer() {
 
     <Link
   className="group flex items-center gap-3 text-base lg:text-lg text-text-secondary hover:text-primary transition-all font-normal w-fit"
-  href={"mailto:sales@lanjekarlogistics.com"}
+  href={"mailto:sales@rhosigma.in"}
 >
   <div className="w-10 h-10 rounded-[10px] bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] flex items-center justify-center flex-shrink-0">
     <Image height={20} width={20} alt="mail" src={"/mail.svg"} />
   </div>
 
   <span className="relative after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-    sales@lanjekarlogistics.com
+    sales@rhosigma.in
   </span>
 </Link>
 

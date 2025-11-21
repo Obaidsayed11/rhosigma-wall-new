@@ -288,9 +288,11 @@ export default function Home() {
     <>
       <Hero />
       <SectionWrapper
+       id="whereToinstall"
         css="bg-[#FFFFFF]"
         title={"Where to install"}
         description={"Ideal Installation Locations for Products."}
+       
       >
         <WhereToInstall />
       </SectionWrapper>

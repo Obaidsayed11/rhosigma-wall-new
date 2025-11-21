@@ -3,9 +3,9 @@ import React from "react";
 import AboutPage from "@/components/About/AboutPage";
 import { mergeMetadata } from "../layout";
 export const metadata = mergeMetadata({
-  title: "About Us | Lanjekar Logistics – Trusted Logistics Services in India",
+  title: "About Us | Rhosigma Valves – Trusted Valves Services in India",
   description:
-    "Learn about Lanjekar Logistics a leading provider of logistics services across India. We specialize in secure, timely cargo and freight transportation.",
+    "Rhosigma is a fast growing company and we focused to provide complete valve automation solution under one roof in Rhosigma actuators as well as in electrical actuators with optional function as per client’s requirement.",
   robots: {
     index: true,
     follow: true,
@@ -14,9 +14,9 @@ export const metadata = mergeMetadata({
     "max-video-preview": -1,
   },
   openGraph: {
-    title: "About Us | Lanjekar Logistics – Trusted Logistics Services in India",
+    title: "About Us | Rhosigma Valves – Trusted Valves Services in India",
     description:
-      "Learn about Lanjekar Logistics a leading provider of logistics services across India. We specialize in secure, timely cargo and freight transportation.",
+      "Rhosigma is a fast growing company and we focused to provide complete valve automation solution under one roof in Rhosigma actuators as well as in electrical actuators with optional function as per client’s requirement.",
     url: "/about",
   },
   alternates: {

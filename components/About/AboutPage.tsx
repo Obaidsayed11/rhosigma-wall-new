@@ -426,6 +426,7 @@ function AboutPage() {
         css=""
         title={"Our Team"}
         description={"Meet Our Dynamic Team Members"}
+        id="team"
       >
         <TeamCards />
       </SectionWrapper>
@@ -441,6 +442,7 @@ function AboutPage() {
 
        <SectionWrapper
         css="bg-[#FFFFFF]"
+          id="certifications"
         title={"Our Certification"}
         description={"Elevated Excellence in Certified Standards."}
       >
@@ -511,6 +513,7 @@ function AboutPage() {
 
       {Certificates.length > 0 && (
         <SectionWrapper
+      
           css="bg-[#FFFFFF]"
           title={"Certifications & Compliance"}
           description={"Logistics Certifications | ISO, FSSAI, etc."}

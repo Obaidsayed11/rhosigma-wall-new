@@ -25,7 +25,7 @@ function BlogpageBanner({
         <span className="text-primary">{maintitle}</span> {lastchunktitle}
       </motion.h1>
       <motion.p className=" text-base lg:text-lg font-medium text-text-secondary"  initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}} transition={{duration:.4,ease:"easeInOut", type:"spring"}}>
-        Leading logistic company in india
+        Leading Valve company in india
       </motion.p>
 
       <motion.button className="w-fit  items-center  relative h-auto px-3 lg:px-5 py-1 lg:py-2 text-primary cursor-pointer flex bg-transparent hover:bg-primary hover:text-white  border border-primary gap-2" onClick={scrollToSecond}  initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}} transition={{duration:.4,ease:"easeInOut", type:"spring"}}>

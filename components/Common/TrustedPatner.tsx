@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, FreeMode } from "swiper/modules";
 import axios from "axios";
 import "swiper/css";
 import { NEXT_PUBLIC_API_URL } from "@/config";
@@ -66,7 +66,7 @@ function TrustedPatner() {
       {/* Desktop Version - Marquee Effect */}
       <section className="w-full relative h-auto hidden md:block logistics-container overflow-hidden">
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, FreeMode]}
           spaceBetween={0}
           slidesPerView="auto"
           speed={3000}
@@ -76,7 +76,13 @@ function TrustedPatner() {
             pauseOnMouseEnter: true,
           }}
           loop={true}
-          allowTouchMove={false}
+          allowTouchMove={true}
+          freeMode={{
+    enabled: true,
+    momentum: true,
+    momentumRatio: 0.5,
+    momentumVelocityRatio: 0.5,
+  }}
           breakpoints={{
             768: {
               slidesPerView: 4,
