@@ -289,7 +289,7 @@ export default function Home() {
       <Hero />
       <SectionWrapper
        id="whereToinstall"
-        css="bg-[#FFFFFF]"
+        css=""
         title={"Where to install"}
         description={"Ideal Installation Locations for Products."}
        
@@ -298,7 +298,7 @@ export default function Home() {
       </SectionWrapper>
 
       <SectionWrapper
-        css="bg-[#FFFFFF] mt-[-12]"
+        css="bg-[#FFFFFF]"
         title={"About Us"}
         description={"Crafting Excellence in Valve Automation."}
       >

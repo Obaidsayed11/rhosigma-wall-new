@@ -1,142 +1,166 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 const shippinggroups = [
   {
-    image:
-      "/courousal-1.jpg",
+    image: "/courousal-1.jpg",
     title: "Road Transport",
   },
   {
-    image:
-     "/courousal-2.jpg",
+    image: "/courousal-2.jpg",
     title: "Air Cargo",
   },
   {
-    image:
-     "/courousal-3.jpg",
+    image: "/courousal-3.jpg",
     title: "Sea Freight",
   },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1920&h=1080&fit=crop",
-  //   title: "Rail Cargo",
-  // },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1920&h=1080&fit=crop",
-  //   title: "Express Delivery",
-  // },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&h=1080&fit=crop",
-  //   title: "Warehousing",
-  // },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&h=1080&fit=crop",
-  //   title: "Cold Chain",
-  // },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=1080&fit=crop",
-  //   title: "Last Mile",
-  // },
 ];
 
 function Hero() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Add your form submission logic here
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
-    <>
-      <section className="relative w-full overflow-hidden bg-white">
-        {/* Full Width Swiper Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          animate={{ opacity: 1 }}
-          className="w-full relative"
-        >
-          <Swiper
-            modules={[Autoplay, Pagination, EffectFade]}
-            slidesPerView={1}
-            effect="fade"
-            fadeEffect={{ crossFade: true }}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            speed={1000}
-            loop={true}
-            // pagination={{
-            //   clickable: true,
-            //   dynamicBullets: false,
-            // }}
-            className="w-full h-[600px] md:h-[700px] lg:h-[800px]"
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-gray-50 to-white xl:mt-10">
+      <div className="relative flex flex-col-reverse px-4 py-12 mx-auto lg:block lg:flex-col lg:py-24 xl:py-32 md:px-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:gap-10">
+        
+        {/* Image/Swiper Section - Left Side on Desktop */}
+        <div className="z-0 flex justify-around h-full -mx-4 overflow-hidden lg:pt-16 lg:pb-12 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px]  overflow-hidden shadow-2xl"
           >
-            {shippinggroups.map((group, slideIndex) => (
-              <SwiperSlide key={slideIndex}>
-                <div className="relative w-full h-full">
-                  {/* Background Image */}
-                  <img
-                    src={group.image}
-                    alt={group.title}
-                    className="w-full h-full object-cover"
-                  />
-
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-black/40"></div>
-
-                  {/* Text overlay - centered */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-                      <motion.h1
-                        className="text-4xl text-white small:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium leading-[1.1]"
-                        initial={{ transform: "translateY(-50px)", opacity: 0 }}
-                        animate={{ opacity: 1, transform: "translateY(0px)" }}
-                        transition={{
-                          duration: 0.8,
-                          ease: "easeOut",
-                          delay: 0.2,
-                        }}
-                      >
-                        Unleash Innovation With{" "}
-                        <span className="text-tertiary">Rhosigma</span>
-                      </motion.h1>
+            <Swiper
+              modules={[Autoplay, EffectFade]}
+              slidesPerView={1}
+              effect="fade"
+              fadeEffect={{ crossFade: true }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              speed={1000}
+              loop={true}
+              className="w-full h-full"
+            >
+              {shippinggroups.map((group, slideIndex) => (
+                <SwiperSlide key={slideIndex}>
+                  <div className="relative w-full h-full">
+                    <img
+                      src={group.image}
+                      alt={group.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-white text-2xl font-bold drop-shadow-lg">
+                        {group.title}
+                      </h3>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
-      </section>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
+        </div>
 
-      <style jsx global>{`
-        .swiper-pagination {
-          bottom: 30px !important;
-        }
+        {/* Content Section - Right Side on Desktop */}
+        <div className="relative flex justify-end max-w-xl mx-auto xl:pr-10 lg:max-w-screen-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="mb-16 lg:pr-5 lg:max-w-lg lg:mb-0"
+          >
+            <div className="max-w-xl mb-6">
+              <div >
+                {/* <span className="inline-block px-4 py-2 mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
+                  Innovation Leader
+                </span> */}
+              </div>
+              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl sm:leading-tight ">
+                Unleash Innovation{" "}
+                <br className="hidden md:block" />
+                With{" "}
+                <span className="inline-block  bg-clip-text text-gradient-accent p-1">
+                  Rhosigma
+                </span>
+              </h2>
+              <p className="text-base text-gray-700 md:text-lg leading-relaxed">
+                Experience cutting-edge valve automation solutions with our decade of expertise. 
+                We provide complete pneumatic and electrical actuator systems tailored to your requirements.
+              </p>
+            </div>
+            {/* <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center h-12 px-8 font-semibold tracking-wide text-white transition duration-200 rounded-lg shadow-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:shadow-outline focus:outline-none transform hover:scale-105"
+                >
+                  Get Started
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </button>
+                <a
+                  href="/about"
+                  className="inline-flex items-center font-semibold transition-colors duration-200 text-blue-600 hover:text-blue-800 group"
+                >
+                  Learn more
+                  <svg
+                    className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div> */}
 
-        .swiper-pagination-bullet {
-          background: white;
-          opacity: 0.5;
-          width: 12px;
-          height: 12px;
-        }
-
-        .swiper-pagination-bullet-active {
-          opacity: 1;
-          background: #2563eb;
-          width: 40px;
-          border-radius: 6px;
-        }
-      `}</style>
-    </>
+            {/* Form */}
+           
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }
 

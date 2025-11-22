@@ -13,6 +13,24 @@
   --text-secondary: hsl(0, 0%, 26%);
   --text-tertiary:linear-gradient(111deg, #0d9de0 0%, #2e5bab 100%);
 
+
+
+    --gradient-accent: linear-gradient(111deg, #0d9de0 0%, #2e5bab 100%);
+
+
+@layer utilities {
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
   --hover-color: hsl(0, 0%, 92%);
 
   --font-plus-jakarta-sans: "Plus Jakarta Sans";

@@ -26,7 +26,7 @@ function ServicesweOfferCard({
 
       <section className="w-full relative h-full  hover:bg-hover-section transition-colors ease-in-out  bg-section">
         <div className=" p-5 xl:p-10 w-full relative h-auto flex flex-col gap-3  ">
-          <h2 className=" text-xl lg:text-3xl xl:text-4xl  font-bold lg:font-semibold text-text-secondary ">
+          <h2 className=" text-xl lg:text-3xl xl:text-4xl  font-bold lg:font-semibold text-text-primary ">
             {title}
           </h2>
           <p className="text-text-secondary font-semibold text-base xl:text-lg line-clamp-2">

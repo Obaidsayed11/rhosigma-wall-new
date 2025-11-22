@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,48 +12,48 @@ const clientData = [
   {
     logo: "/client-image.png",
     alt: "",
-    companyName: "oss"
+    companyName: "oss",
   },
   {
     logo: "/logo.png",
     alt: "",
-    companyName: "oss"
+    companyName: "oss",
   },
   {
     logo: "/logo.png",
     alt: "",
-    companyName: "oss"
+    companyName: "oss",
   },
   {
     logo: "/logo.png",
     alt: "",
-    companyName: "oss"
+    companyName: "oss",
   },
   {
     logo: "/logo.png",
     alt: "",
-    companyName: "oss"
+    companyName: "oss",
   },
   {
     logo: "/logo.png",
     alt: "",
-    companyName: "oss"
+    companyName: "oss",
   },
 ];
 
 function TrustedPatner() {
   const [clients, setClients] = useState<ClientsProps[]>([]);
-  
+
   async function fetchclient() {
     try {
       const response = await axios.get(`${NEXT_PUBLIC_API_URL}/clients`);
       console.log(response.data.Clients);
       setClients(response.data.Clients);
     } catch (error) {
-      console.log(error, 'error');
+      console.log(error, "error");
     }
   }
-   
+
   useEffect(() => {
     fetchclient();
   }, []);
@@ -78,11 +78,11 @@ function TrustedPatner() {
           loop={true}
           allowTouchMove={true}
           freeMode={{
-    enabled: true,
-    momentum: true,
-    momentumRatio: 0.5,
-    momentumVelocityRatio: 0.5,
-  }}
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.5,
+            momentumVelocityRatio: 0.5,
+          }}
           breakpoints={{
             768: {
               slidesPerView: 4,
@@ -96,7 +96,11 @@ function TrustedPatner() {
             <SwiperSlide key={index}>
               <span className="border h-full py-5 md:py-10 px-5 md:px-10 flex items-center justify-center border-gray-200">
                 <Image
-                  src={clients.length > 0 ? `${NEXT_PUBLIC_API_URL}${client.logo}` : client.logo}
+                  src={
+                    clients.length > 0
+                      ? `${NEXT_PUBLIC_API_URL}${client.logo}`
+                      : client.logo
+                  }
                   alt={client.companyName}
                   height={500}
                   width={500}
@@ -135,7 +139,11 @@ function TrustedPatner() {
             <SwiperSlide key={index}>
               <span className="border h-[100px] py-5 px-5 flex items-center justify-center border-gray-200">
                 <Image
-                  src={clients.length > 0 ? `${NEXT_PUBLIC_API_URL}${client.logo}` : client.logo}
+                  src={
+                    clients.length > 0
+                      ? `${NEXT_PUBLIC_API_URL}${client.logo}`
+                      : client.logo
+                  }
                   alt={client.companyName}
                   height={500}
                   width={500}

@@ -325,7 +325,7 @@ const prodcutsData = [
   },
 ];
 
-const WhyChooseUsRhSection: WhyChooseRhCardProps[] =[
+const WhyChooseUsRhSection: WhyChooseRhCardProps[] = [
   {
     number: "01", // CHANGED: from image to number
     // title: "Freight Transportation",
@@ -336,15 +336,14 @@ const WhyChooseUsRhSection: WhyChooseRhCardProps[] =[
   {
     number: "02",
     // title: "Warehousing & Inventory Management",
-    description:
-      "On time delivery.",
+    description: "On time delivery.",
     descriptioncss: "text-primary",
   },
   {
     number: "03",
     // title: "Competitive price for best quality products.",
     descriptioncss: "text-primary",
-    description:"Competitive price for best quality products.",
+    description: "Competitive price for best quality products.",
   },
   {
     number: "04",
@@ -357,8 +356,7 @@ const WhyChooseUsRhSection: WhyChooseRhCardProps[] =[
     number: "05",
     // title: "Custom Supply Chain Solutions for SMEs and Enterprises",
     descriptioncss: "text-primary",
-    description:
-      "Decades of experience in valve automation.",
+    description: "Decades of experience in valve automation.",
   },
   {
     number: "06",
@@ -368,7 +366,6 @@ const WhyChooseUsRhSection: WhyChooseRhCardProps[] =[
       "Complete valve automation in pneumatic as well as electrical actuators.",
   },
 ];
-
 
 function AboutPage() {
   const [Certificates, setCertificates] = useState<CertificateProps[]>([]);
@@ -422,16 +419,16 @@ function AboutPage() {
     <>
       <AboutHero />
       <WhoWeAre />
-       <SectionWrapper
+      <SectionWrapper
+        id="team"
         css=""
         title={"Our Team"}
         description={"Meet Our Dynamic Team Members"}
-        id="team"
       >
         <TeamCards />
       </SectionWrapper>
 
-       <SectionWrapper
+      <SectionWrapper
         css="bg-[#FFFFFF]"
         title={"Where to install"}
         description={"Ideal Installation Locations for Products."}
@@ -439,14 +436,13 @@ function AboutPage() {
         <WhereToInstall />
       </SectionWrapper>
 
-
-       <SectionWrapper
+      <SectionWrapper
+        id="certifications"
         css="bg-[#FFFFFF]"
-          id="certifications"
         title={"Our Certification"}
         description={"Elevated Excellence in Certified Standards."}
       >
-        <CertificatesPage  />
+        <CertificatesPage />
       </SectionWrapper>
 
       {/* <SectionWrapper
@@ -464,7 +460,6 @@ function AboutPage() {
       >
         <WhyChooseUs data={WhyChooseUsSection} isquoteShow={true} />
       </SectionWrapper> */}
-
 
       {/* <SectionWrapper
         css="bg-[#FFFFFF]"
@@ -513,7 +508,6 @@ function AboutPage() {
 
       {Certificates.length > 0 && (
         <SectionWrapper
-      
           css="bg-[#FFFFFF]"
           title={"Certifications & Compliance"}
           description={"Logistics Certifications | ISO, FSSAI, etc."}
