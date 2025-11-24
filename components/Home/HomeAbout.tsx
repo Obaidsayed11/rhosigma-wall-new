@@ -1,34 +1,51 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 
 function HomeAbout() {
   const images = [
-    { src: "/product-1.jpg", alt: "Rhosigma Actuators" },
-    { src: "/product-2.jpg", alt: "Electric Actuator" },
-    { src: "/product-3.jpg", alt: "Valve Solutions" },
-    { src: "/product-4.jpg", alt: "Automation Systems" },
+    { src: "/who-1.jpg", alt: "Rhosigma Actuators" },
+    { src: "/who-2.jpg", alt: "Electric Actuator" },
+    { src: "/who-3.jpg", alt: "Valve Solutions" },
+    { src: "/who-4.jpg", alt: "Automation Systems" },
   ];
+
+   const data = [{
+    id: 1,
+    title: "Who We Are",
+    content: "Rhosigma is a fast growing company and we focused to provide complete valve automation solution under one roof in pneumatic actuators as well as in electrical actuators with optional function as per client's requirement. We have decade of experience in valve automation and we understand the client's requirement and provide the solution with low budget and high performance quality of valves and automation with guarantee of each products."
+  }];
+
+    const [expanded, setExpanded] = useState({});
+    
+    const toggleExpand = (id) => {
+      setExpanded(prev => ({ ...prev, [id]: !prev[id] }));
+    };
 
   return (
     <section className="w-full relative logistics-container py-16 lg:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Content */}
-        <div className="flex flex-col gap-6">
-          <div>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4">
-              Who We Are
-            </h2>
-          </div>
-          <p className="text-base lg:text-lg font-medium text-gray-700 leading-relaxed">
-            Rhosigma is a fast growing company and we focused to provide complete valve automation solution under one roof in Rhosigma actuators as well as in electrical actuators with optional function as per client's requirement. We have decade of experience in valve automation and we understand the client's requirement and provide the solution with low budget and high performance quality of valves and automation with guarantee of each products.
-          </p>
-          <div className="flex gap-4 mt-4">
-            <button className="px-6 py-3 bg-gradient-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all">
-              Learn More
-            </button>
-          </div>
-        </div>
-
+       <div className="flex flex-col gap-4 lg:px-10 lg:py-10">
+               {data && data.map((dat) => (
+                 <React.Fragment key={dat.id}>
+                   <h2 className="text-3xl lg:text-4xl font-semibold text-text-secondary">
+                     {dat.title}
+                   </h2>
+                   <div className="text-base lg:text-lg font-medium text-text-secondary">
+                     <p className={expanded[dat.id] ? '' : 'line-clamp-4 sm:line-clamp-5 md:line-clamp-6 lg:line-clamp-6'}>
+                       {dat.content}
+                     </p>
+                     <button
+                       onClick={() => toggleExpand(dat.id)}
+                       className="text-primary hover:text-primary/80 text-sm mt-2 font-medium transition-colors"
+                     >
+                       {expanded[dat.id] ? 'Show less' : 'See more...'}
+                     </button>
+                   </div>
+                 </React.Fragment>
+               ))}
+             </div>
         {/* Images Grid */}
         <div className="grid grid-cols-2 gap-4 lg:gap-6">
           {images.map((image, index) => (

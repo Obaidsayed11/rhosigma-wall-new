@@ -4,6 +4,8 @@
 @import "tailwindcss/utilities";
 
 :root {
+   --scrollbar-thumb: #2e5bab;
+  --scrollbar-track: #ffffff;
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(0, 0%, 9%);
   --primary: #2e5bab;
@@ -29,7 +31,12 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  
 }
+
+
+
+
 
   --hover-color: hsl(0, 0%, 92%);
 
@@ -274,6 +281,24 @@ body {
   color: transparent;
 }
 
+/* Native default scrollbar — only color changed */
+html {
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Chrome, Edge, Safari (keeps default size & style) */
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
 
 
 

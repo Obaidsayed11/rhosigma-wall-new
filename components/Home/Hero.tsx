@@ -41,7 +41,7 @@ function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-gray-50 to-white xl:mt-10">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-gray-50 to-white xl:mt-10 xl:mb-20">
       <div className="relative flex flex-col-reverse px-4 py-12 mx-auto lg:block lg:flex-col lg:py-24 xl:py-32 md:px-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl xl:gap-10">
         
         {/* Image/Swiper Section - Left Side on Desktop */}

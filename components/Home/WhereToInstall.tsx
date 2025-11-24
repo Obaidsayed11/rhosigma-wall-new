@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import Catalogue from "../Common/Catalougue";
+import CatalogueModal from "../Common/CatalogueModal";
 
 const shippinggroups = [
   {
@@ -69,10 +71,11 @@ const shippinggroups = [
 // Function to chunk array into groups of 4
 
 function WhereToInstall() {
+   const [isCatalogueOpen, setIsCatalogueOpen] = useState(false);
 
   
   return (
-    <section className="w-full relative h-auto">
+    <section className="w-full relative h-auto" >
       <div className="w-full mx-auto ">
    <Swiper
   modules={[Autoplay, Pagination, FreeMode]}
@@ -130,7 +133,9 @@ function WhereToInstall() {
           <p className="text-sm md:text-base font-medium text-gray-600 line-clamp-4">
             {group.description}
           </p>
-          <button className="bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors  text-sm md:text-base font-medium flex items-center gap-2">
+          <button className="bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors  text-sm md:text-base font-medium flex items-center gap-2"
+          onClick={() => setIsCatalogueOpen(true)}
+          >
             Get a Quote
             <svg
               className="w-4 h-4"
@@ -145,6 +150,7 @@ function WhereToInstall() {
                 d="M9 5l7 7-7 7"
               />
             </svg>
+           
           </button>
         </div>
       </div>
@@ -169,6 +175,10 @@ function WhereToInstall() {
           display: none !important;
         }
       `}</style>
+      <CatalogueModal
+        isOpen={isCatalogueOpen}
+        onClose={() => setIsCatalogueOpen(false)}
+      />
     </section>
   );
 }

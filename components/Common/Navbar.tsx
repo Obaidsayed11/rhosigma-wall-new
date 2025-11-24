@@ -63,17 +63,16 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const productItems = [
-    { title: "Rhosigma Actuators", slug: "rhosigma-actuators" },
-    { title: "Electric Actuator", slug: "electric-actuator" },
-    { title: "Rhosigma Valve", slug: "rhosigma-valve" },
-    { title: "Motorized Valve", slug: "motorized-valve" },
-    { title: "Solenoid Valve", slug: "solenoid-valve" },
-    { title: "Position Indicators", slug: "position-indicators" },
-    { title: "Valve Positioner", slug: "valve-positioner" },
-    { title: "Valve Accessories", slug: "valve-accessories" },
-    { title: "NAMUR Solenoid Valve", slug: "namur-solenoid-valve" },
+    { title: "Rhosigma Actuators", category: "rhosigma-valve" },
+    { title: "Electric Actuator", category: "electric-actuator" }, // if exists
+    { title: "Rhosigma Valve", category: "rhosigma-valve" },
+    { title: "Motorized Valve", category: "motorized-valve" },
+    { title: "Solenoid Valve", category: "solenoid-valve" },
+    { title: "Position Indicators", category: "position-indicators" },
+    { title: "Valve Positioner", category: "valve-positioner" },
+    { title: "Valve Accessories", category: "valve-accessories" },
+    { title: "NAMUR Solenoid Valve", category: "namur-solenoid-valve" },
   ];
 
   return (
@@ -83,48 +82,48 @@ function Navbar() {
       }`}
     >
       {/* Top Bar */}
-    <div className="w-full bg-gradient-accent">
-  <div className="logistics-container py-2.5 px-4 flex items-center justify-center">
-    <div className="flex items-center gap-3 sm:gap-6 md:gap-10">
-      {/* Phone */}
-      <Link
-        className="group flex items-center gap-2 text-text-secondary hover:text-white/80 transition-all font-normal"
-        href="tel:918655587403"
-      >
-        <Image 
-          height={16} 
-          width={16} 
-          alt="Phone" 
-          src="/phone.svg"
-          className="sm:h-5 sm:w-5 flex-shrink-0"
-        />
-        <span className="text-white text-xs sm:text-sm md:text-base lg:text-lg">
-          <span className="hidden sm:inline">+91 </span>8655587403
-        </span>
-      </Link>
+      <div className="w-full bg-gradient-accent h-8 flex items-center">
+        <div className="logistics-container py-2.5 px-4 flex items-center justify-center">
+          <div className="flex items-center gap-3 sm:gap-6 md:gap-10 ">
+            {/* Phone */}
+            <Link
+              className="group flex items-center gap-2 text-text-secondary hover:text-white/80 transition-all font-normal "
+              href="tel:918655587403"
+            >
+              <Image
+                height={16}
+                width={16}
+                alt="Phone"
+                src="/phone.svg"
+                className="xl:h-5 xl:w-5 sm:h-5 sm:w-5 flex-shrink-0"
+              />
+              <span className="text-white text-sm sm:text-sm md:text-base lg:text-sm">
+                <span className="hidden sm:inline">+91 </span>8655587403
+              </span>
+            </Link>
 
-      {/* Divider */}
-      <span className="text-white/50 text-sm sm:text-base">|</span>
+            {/* Divider */}
+            <span className="text-white/50 text-sm sm:text-base">|</span>
 
-      {/* Email */}
-      <Link
-        className="group flex items-center gap-2 text-text-secondary hover:text-white/80 transition-all font-normal"
-        href="mailto:sales@rhosigma.in"
-      >
-        <Image 
-          height={16} 
-          width={16} 
-          alt="mail" 
-          src="/mail.svg"
-          className="sm:h-5 sm:w-5 flex-shrink-0"
-        />
-        <span className="text-white text-xs sm:text-sm md:text-base lg:text-lg truncate max-w-[150px] sm:max-w-none">
-          sales@rhosigma.in
-        </span>
-      </Link>
-    </div>
-  </div>
-</div>
+            {/* Email */}
+            <Link
+              className="group flex items-center gap-2 text-text-secondary hover:text-white/80 transition-all font-normal "
+              href="mailto:sales@rhosigma.in"
+            >
+              <Image
+                height={16}
+                width={16}
+                alt="mail"
+                src="/mail.svg"
+                className="xl:h-5 xl:w-5 sm:h-5 sm:w-5 flex-shrink-0 "
+              />
+              <span className="text-white  sm:text-sm md:text-base lg:text-sm truncate max-w-[150px] sm:max-w-none text-sm">
+                sales@rhosigma.in
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
 
       {/* Main Navbar */}
       <div className="logistics-container">
@@ -204,7 +203,7 @@ function Navbar() {
                   {productItems.map((item, i) => (
                     <Link
                       key={i}
-                      href={`/products/${item.slug}`}
+                      href={`/products/${item.category}`} // This now goes to category page
                       className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors border-l-3 border-transparent hover:border-primary"
                     >
                       {item.title}
@@ -236,7 +235,7 @@ function Navbar() {
             {/* Catalogue Button */}
             <button
               onClick={() => setIsCatalogueOpen(true)}
-              className="bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors  text-sm md:text-base font-medium flex items-center gap-2"
+              className="hidden lg:flex bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors text-sm md:text-base font-medium items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -257,7 +256,7 @@ function Navbar() {
             {/* Contact Button */}
             <Link
               href="/contact"
-              className="hover:bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary hover:text-primary bg-primary text-white transition-colors  text-sm md:text-base font-medium flex items-center gap-2"
+              className="hidden lg:flex hover:bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary hover:text-primary bg-primary text-white transition-colors text-sm md:text-base font-medium items-center gap-2"
             >
               Contact Us
             </Link>

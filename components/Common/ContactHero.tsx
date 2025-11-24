@@ -1,17 +1,18 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-function AboutHero() {
+function ContactHero() {
   return (
  <section className="w-full relative flex items-center justify-center overflow-hidden h-[60vh] sm:h-[70vh]">
   {/* Background */}
   <div className="absolute inset-0 w-full h-full">
     <Image
       src="/courousal-2.jpg"
-      alt="About Rhosigma"
+      alt="Contact US"
       fill
       priority
       className="object-cover"
@@ -34,7 +35,7 @@ function AboutHero() {
         Home
       </Link>
       <ChevronRight className="w-4 h-4 text-gray-300" />
-      <span className="text-white font-semibold">About Us</span>
+      <span className="text-white font-semibold">Contact Us</span>
     </nav>
 
     {/* Heading */}
@@ -44,9 +45,9 @@ function AboutHero() {
       transition={{ duration: 0.8 }}
       className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
     >
-      They call us the{" "}
-      <span className="text-primary">people</span>
-      <br /> behind Valves
+     Get in
+      <span className="text-primary">Touch</span>
+      <br />  With Us
     </motion.h1>
 
     {/* Description */}
@@ -56,8 +57,7 @@ function AboutHero() {
       transition={{ duration: 0.8, delay: 0.2 }}
       className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed"
     >
-      Discover the passion, expertise, and innovation that drives Rhosigma to
-      deliver world-class valve automation solutions.
+      We’re committed to providing fast and reliable support. Contact our team for expert guidance on products, services, and solutions tailored to your needs.
     </motion.p>
 
     {/* Soft Glow Decorations */}
@@ -79,4 +79,4 @@ function AboutHero() {
   );
 }
 
-export default AboutHero;
+export default ContactHero;

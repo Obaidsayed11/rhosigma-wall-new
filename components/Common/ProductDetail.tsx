@@ -13,7 +13,7 @@ import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 
 interface ProductDetailProps {
-  product: ProductDataProps;
+  product?: ProductDataProps;
 }
 
 export default function ProductDetail({ product }: ProductDetailProps) {
@@ -39,7 +39,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     }
   };
 
-  const hasMultipleImages = product.images.length > 1;
+  const hasMultipleImages = product?.images?.length > 1;
 
   return (
     <div className="min-h-screen bg-gray-50 py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
@@ -52,12 +52,12 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 Home
               </a>
             </li>
-            {/* <li className="text-gray-400">/</li>
+            <li className="text-gray-400">/</li>
             <li>
-              <a href="/products" className="text-gray-500 hover:text-gray-700">
-                Products
+              <a href={`/products/${product.categorySlug}`} className="text-gray-500 hover:text-gray-700">
+                {product.categorySlug}
               </a>
-            </li> */}
+            </li>
             <li className="text-gray-400">/</li>
             <li className="text-gray-900 font-medium line-clamp-1">
               {product.title}
@@ -92,7 +92,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 loop={hasMultipleImages}
                 className="rounded-lg shadow-lg bg-white overflow-hidden"
               >
-                {product.images.map((img, idx) => (
+                {product?.images.map((img, idx) => (
                   <SwiperSlide key={idx}>
                     <div className="relative aspect-square w-full">
                       <Image
@@ -137,7 +137,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
           },
         }}
       >
-        {product.images.map((img, idx) => (
+        {product?.images.map((img, idx) => (
           <SwiperSlide key={idx}>
             <div
               onClick={() => handleThumbnailClick(idx)}

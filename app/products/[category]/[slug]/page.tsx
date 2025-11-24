@@ -1,33 +1,32 @@
-
-
 import { notFound } from "next/navigation";
-import { getProductBySlug, productsData } from "@/lib/productsData";
+import { getProductByCategoryAndSlug, productsData } from "@/lib/productsData";
 import ProductDetail from "@/components/Common/ProductDetail";
-import SectionWrapper from "@/components/Common/SectionWrapper";
+
 interface PageProps {
   params: {
+    category: string;
     slug: string;
   };
 }
 
-
-// Generate static params for all products (for static generation)
+// Generate static params for all products
 export async function generateStaticParams() {
   return productsData.map((product) => ({
+    category: product.categorySlug,
     slug: product.slug,
   }));
 }
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const product =  getProductBySlug(slug);
+  const { category, slug } = await params;
+  const product = getProductByCategoryAndSlug(category, slug);
 
   if (!product) {
-    return {                                                      
+    return {
       title: "Product Not Found",
     };
-  } 
+  }
 
   return {
     title: `${product.title} | Your Company Name`,
@@ -36,24 +35,12 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const product = getProductBySlug((await params).slug);
+  const { category, slug } = await params;
+  const product = getProductByCategoryAndSlug(category, slug);
 
   if (!product) {
     notFound();
   }
 
-  return (
-  // <SectionWrapper 
-  //   css="xl:mt-[-80] sm:mt-[-50] flex items-center "
-  //       title={""}
-  //       description={
-  //         ""
-  //       }
-  
-  // >
-<ProductDetail product={product} />
-
-  // </SectionWrapper>
-  
-  );
+  return <ProductDetail product={product} />;
 }

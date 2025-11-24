@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 function WhoWeAre() {
+  const images = [
+    { src: "/who-1.jpg", alt: "Rhosigma Actuators" },
+    { src: "/who-2.jpg", alt: "Electric Actuator" },
+    { src: "/who-3.jpg", alt: "Valve Solutions" },
+    { src: "/who-4.jpg", alt: "Automation Systems" },
+  ];
+
+  
   const data = [{
     id: 1,
     title: "Who We Are",
@@ -15,7 +23,7 @@ function WhoWeAre() {
   };
 
   return (
-    <section className="w-full relative logistics-container py-10 gap-10 lg:gap-0 items-center justify-center h-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+    <section className="w-full relative logistics-container py-10 gap-10 lg:gap-0 items-center justify-center h-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mt-20">
       <div className="flex flex-col gap-4 lg:px-10 lg:py-10">
         {data && data.map((dat) => (
           <React.Fragment key={dat.id}>
@@ -37,13 +45,28 @@ function WhoWeAre() {
         ))}
       </div>
       
-      <Image 
-        src={"/about-image.jpg"} 
-        alt="about page image" 
-        height={700} 
-        width={700} 
-        className="w-full xl:col-start-2 xl:col-end-4 relative h-full object-cover max-h-[450px] object-top"
-      />
+    <div className="grid grid-cols-2 gap-4 lg:gap-6">
+             {images.map((image, index) => (
+               <div
+                 key={index}
+                 className="relative aspect-square bg-gradient-to-br from-white to-gray-50  shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-all w-[100%]"
+               >
+                 <Image
+                   src={image.src}
+                   alt={image.alt}
+                   fill
+                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                   <div className="absolute bottom-4 left-4 right-4">
+                     <p className="text-white font-semibold text-sm">
+                       {image.alt}
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             ))}
+           </div>
     </section>
   );
 }

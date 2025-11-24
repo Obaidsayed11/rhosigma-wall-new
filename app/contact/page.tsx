@@ -3,10 +3,15 @@ import Link from "next/link";
 import ContactForm from "@/components/Common/ContactForm";
 import LocationSectiobn from "@/components/Common/LocationSectiobn";
 import { mergeMetadata } from "../layout";
+import ContactHero from "../../components/Common/ContactHero";
+import ProductsSection from "@/components/Home/ProductsSection";
+import { productsData } from "@/lib/productsTitle";
+import SectionWrapper from "@/components/Common/SectionWrapper";
+
 export const metadata = mergeMetadata({
-  title: "Contact Lanjekar Logistics | Reliable Logistics Services in India",
+  title: "Contact Rhosigma | Industrial Valves & Automation Solutions",
   description:
-    "Get in touch with Lanjekar Logistics for all your logistics and transportation needs across India. Reach out to us for inquiries, quotes, or support today.",
+    "Reach out to Rhosigma for product inquiries, custom valve solutions, actuator specifications, or technical support.",
   robots: {
     index: true,
     follow: true,
@@ -15,9 +20,9 @@ export const metadata = mergeMetadata({
     "max-video-preview": -1,
   },
   openGraph: {
-    title: "Contact Lanjekar Logistics | Reliable Logistics Services in India",
+    title: "Contact Rhosigma | Industrial Valves & Automation Solutions",
     description:
-      "Get in touch with Lanjekar Logistics for all your logistics and transportation needs across India. Reach out to us for inquiries, quotes, or support today.",
+      "Get in touch with Rhosigma for all your industrial valve requirements, actuator solutions, and technical queries.",
     url: "/contact",
   },
   alternates: {
@@ -28,76 +33,92 @@ export const metadata = mergeMetadata({
 function page() {
   return (
     <>
-      <section className="w-full relative h-auto  logistics-container grid py-10 lg:py-20 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-        <div className="w-fullrelative h-auto flex flex-col gap-2.5 md:gap-3.5 lg:gap-6 cols-span-1 xl:col-span-2">
-          <h2 className=" text-3xl md:text-4xl lg:text-5xl lx:text-6xl font-semibold text-text-secondary ">
+      <ContactHero />
+
+      {/* Contact Layout */}
+      <section className="w-full logistics-container py-10 lg:py-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+        
+        {/* Left Content */}
+        <div className="flex flex-col gap-6 md:col-span-1 xl:col-span-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-text-secondary">
             Contact Us
           </h2>
 
-          <p className=" text-sm md:text-base lg:text-lg font-medium  text-text-secondary">
-            Email, call or complete the form to know how Rhosigma can
-            solve your Valve problem.
+          <p className="text-base md:text-lg text-text-secondary max-w-xl">
+            Email, call, or complete the form to learn how Rhosigma can provide
+            the right valve or automation solution for your application.
           </p>
 
-          <Link
-            href={"melto:info@rhosigma.in"}
-            className="text-sm md:text-base w-fit lg:text-lg font-medium text-text-secondary"
-          >
-            {" "}
-            info@rhosigma.in
-          </Link>
+          <div className="flex flex-col gap-3 pt-3">
+            <Link
+              href="mailto:info@rhosigma.in"
+              className="text-base md:text-lg text-primary font-medium"
+            >
+              info@rhosigma.in
+            </Link>
 
-          <Link
-            href={"tel:+91 86555 87403"}
-            className="text-text-secondary w-fit font-medium text-sm md:text-base lg:text-lg "
-          >
-            +91 86555 87403
-          </Link>
+            <Link
+              href="tel:+918655587403"
+              className="text-base md:text-lg text-text-secondary font-medium"
+            >
+              +91 86555 87403
+            </Link>
 
-          <Link
-            href={"/"}
-            className="text-text-secondary  w-fit underline font-semibold text-base lg:text-lg "
-          >
-            Customer Support
-          </Link>
+            <Link
+              href="/"
+              className="underline text-base md:text-lg text-text-secondary font-semibold"
+            >
+              Customer Support
+            </Link>
+          </div>
 
-          <section className="w-full relative h-auto grid grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5 mt-10 md:mt-10 xl:mt-20">
-            <div className="flex flex-col gap-1.5">
-              <h2 className="text-xl font-semibold text-text-secondary ">
-                Customer Support
-              </h2>
-              <p className=" text-sm sm:text-base font-medium text-text-secondary line-clamp-3 ">
-                Our support team is available around the clock to address any
-                concerns or queries you may have.
-              </p>
-            </div>
-            <div className="flex flex-col gap-1.5">
+          {/* Support Cards */}
+          <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">
+            
+            <div className="p-4 bg-white shadow-md ">
               <h2 className="text-xl font-semibold text-text-secondary">
                 Customer Support
               </h2>
-              <p className="text-sm sm:text-base font-medium text-text-secondary line-clamp-3 ">
-                Our support team is available around the clock to address any
-                concerns or queries you may have.
+              <p className="text-sm sm:text-base text-text-secondary mt-2">
+                Our team is available to assist with order inquiries,
+                product selection, or support requests.
               </p>
             </div>
-            <div className="flex flex-col gap-1.5">
+
+            <div className="p-4 bg-white shadow-md ">
               <h2 className="text-xl font-semibold text-text-secondary">
-                Customer Support
+                Technical Assistance
               </h2>
-              <p className="text-sm sm:text-base font-medium text-text-secondary line-clamp-3 ">
-                Our support team is available around the clock to address any
-                concerns or queries you may have.
+              <p className="text-sm sm:text-base text-text-secondary mt-2">
+                Get expert guidance on valve sizing, actuator selection,
+                or integration support.
               </p>
             </div>
+
+            <div className="p-4 bg-white shadow-md ">
+              <h2 className="text-xl font-semibold text-text-secondary">
+                Sales & Inquiries
+              </h2>
+              <p className="text-sm sm:text-base text-text-secondary mt-2">
+                Contact our sales team for quotations, catalogs,
+                and distributor information.
+              </p>
+            </div>
+
           </section>
         </div>
+
+        {/* Contact Form */}
         <ContactForm />
       </section>
+
       <LocationSectiobn />
+
+      <SectionWrapper css="bg-primary" title="" description="">
+        <ProductsSection data={productsData} />
+      </SectionWrapper>
     </>
   );
 }
 
 export default page;
-
-
