@@ -23,7 +23,7 @@ function HomeAbout() {
     };
 
   return (
-    <section className="w-full relative logistics-container py-16 lg:py-20">
+    <section className="w-full relative logistics-container ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Content */}
        <div className="flex flex-col gap-4 lg:px-10 lg:py-10">
@@ -36,22 +36,44 @@ function HomeAbout() {
                      <p className={expanded[dat.id] ? '' : 'line-clamp-4 sm:line-clamp-5 md:line-clamp-6 lg:line-clamp-6'}>
                        {dat.content}
                      </p>
-                     <button
+                     {/* <button
                        onClick={() => toggleExpand(dat.id)}
                        className="text-primary hover:text-primary/80 text-sm mt-2 font-medium transition-colors"
                      >
                        {expanded[dat.id] ? 'Show less' : 'See more...'}
-                     </button>
+                     </button> */}
+                     <ul className="mt-4 space-y-3 text-text-secondary text-base lg:text-lg font-medium">
+  <li className="flex items-start gap-2">
+    <span className="text-primary mt-1">✔</span>
+    <span>10+ years of expertise in valve automation systems</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-primary mt-1">✔</span>
+    <span>Complete in-house pneumatic & electric actuator solutions</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-primary mt-1">✔</span>
+    <span>Customized automation options based on client needs</span>
+  </li>
+
+  <li className="flex items-start gap-2">
+    <span className="text-primary mt-1">✔</span>
+    <span>High-performance, budget-friendly valves guaranteed</span>
+  </li>
+</ul>
+
                    </div>
                  </React.Fragment>
                ))}
              </div>
         {/* Images Grid */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 -mb-30 h-[100%]">
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative aspect-square bg-gradient-to-br from-white to-gray-50  shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-all w-[100%]"
+              className="relative aspect-square bg-gradient-to-br from-white to-gray-50  shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-all w-[100%] h-[80%]"
             >
               <Image
                 src={image.src}

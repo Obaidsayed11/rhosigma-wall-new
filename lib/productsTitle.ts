@@ -2,7 +2,7 @@ export const productsData = [
   // --- Rhosigma Actuators (rhosigma-actuators) ---
   {
     title: "Rack and Pinion Actuator",
-    url: "/products/rhosigma-actuators/rack-and-pinion-actuator",
+    url: "/products/rack-and-pinion-actuator",
   },
   {
     title: "Scotch Yoke Actuatorr",

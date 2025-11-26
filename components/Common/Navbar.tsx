@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SideBar from "./SideBar";
@@ -82,7 +82,7 @@ function Navbar() {
       }`}
     >
       {/* Top Bar */}
-      <div className="w-full bg-gradient-accent h-8 flex items-center">
+      <div className="w-full bg-gradient-accent h-12 flex items-center">
         <div className="logistics-container py-2.5 px-4 flex items-center justify-center">
           <div className="flex items-center gap-3 sm:gap-6 md:gap-10 ">
             {/* Phone */}
@@ -97,7 +97,7 @@ function Navbar() {
                 src="/phone.svg"
                 className="xl:h-5 xl:w-5 sm:h-5 sm:w-5 flex-shrink-0"
               />
-              <span className="text-white text-sm sm:text-sm md:text-base lg:text-sm">
+              <span className="text-white text-lg sm:text-sm md:text-base lg:text-lg xl:text-lg">
                 <span className="hidden sm:inline">+91 </span>8655587403
               </span>
             </Link>
@@ -117,7 +117,7 @@ function Navbar() {
                 src="/mail.svg"
                 className="xl:h-5 xl:w-5 sm:h-5 sm:w-5 flex-shrink-0 "
               />
-              <span className="text-white  sm:text-sm md:text-base lg:text-sm truncate max-w-[150px] sm:max-w-none text-sm">
+              <span className="text-white  sm:text-sm md:text-base lg:text-lg xl:text-lg truncate max-w-[150px] sm:max-w-none text-sm">
                 sales@rhosigma.in
               </span>
             </Link>
@@ -140,45 +140,49 @@ function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-1">
+          <ul className="hidden lg:flex items-center gap-1 xl:ml-50">
             <Link
               href="/"
-              className={`relative px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
+              className={`relative inline-block px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
                 path === "/"
                   ? "text-primary"
                   : "text-gray-700 hover:text-primary"
               }`}
             >
-              Home
-              <span
-                className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
-                  path === "/"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
+              <span className="relative">
+                Home
+                <span
+                  className={`absolute bottom-[-10] left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
+                    path === "/"
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </span>
             </Link>
 
             <Link
               href="/about"
-              className={`relative px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
+              className={`relative inline-block px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
                 path === "/about"
                   ? "text-primary"
                   : "text-gray-700 hover:text-primary"
               }`}
             >
-              About Us
-              <span
-                className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
-                  path === "/about"
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
+              <span className="relative">
+                About Us
+                <span
+                  className={`absolute  bottom-[-10] left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
+                    path === "/about"
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </span>
             </Link>
 
             {/* Products Dropdown */}
-            <div className="relative group">
+            {/* <div className="relative group inline-block">
               <button
                 className={`flex items-center gap-1.5 px-5 xl:px-6 py-2 text-[18px] font-medium transition-all ${
                   path.startsWith("/products")
@@ -186,24 +190,26 @@ function Navbar() {
                     : "text-gray-700 hover:text-primary"
                 }`}
               >
-                Products
+                <span className="relative">
+                  Products
+                  <span
+                    className={`absolute bottom-[-9] left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
+                      path.startsWith("/products")
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                  />
+                </span>
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <span
-                className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
-                  path.startsWith("/products")
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
 
-              {/* Dropdown Menu */}
+          
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
                 <div className="py-2">
                   {productItems.map((item, i) => (
                     <Link
                       key={i}
-                      href={`/products/${item.category}`} // This now goes to category page
+                      href={`/products/${item.category}`}
                       className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors border-l-3 border-transparent hover:border-primary"
                     >
                       {item.title}
@@ -211,7 +217,27 @@ function Navbar() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
+
+              <Link
+              href="/products"
+              className={`relative inline-block px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
+                path === "/products"
+                  ? "text-primary"
+                  : "text-gray-700 hover:text-primary"
+              }`}
+            >
+              <span className="relative">
+               Products
+                <span
+                  className={`absolute  bottom-[-10] left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
+                    path === "/products"
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </span>
+            </Link>
 
             {/* <Link
               href="/technology"
@@ -235,21 +261,9 @@ function Navbar() {
             {/* Catalogue Button */}
             <button
               onClick={() => setIsCatalogueOpen(true)}
-              className="hidden lg:flex bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors text-sm md:text-base font-medium items-center gap-2"
+              className="hidden lg:flex bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors text-sm md:text-base font-medium items-center gap-2 "
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
+              <Download />
               <Catalogue />
             </button>
 

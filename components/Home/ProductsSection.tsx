@@ -38,7 +38,7 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
                     bg-white/5 
                     hover:bg-white/10 
                     border border-white/10
-                    rounded-xl 
+                   
                     p-4 
                     flex 
                     items-center 

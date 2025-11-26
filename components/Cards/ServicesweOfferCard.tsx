@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Common/Button";
 import Image from "next/image";
-import { ServicesweOfferCardprops } from "@/types/Interface";
+import { ProductsweOfferCardprops, ServicesweOfferCardprops } from "@/types/Interface";
 import { LuArrowUpRight } from "react-icons/lu";
 import Link from "next/link";
 
@@ -13,8 +13,9 @@ function ServicesweOfferCard({
   direction,
   toGoL2Page,
   GoL2BtnText,
-  slug
-}: ServicesweOfferCardprops) {
+  slug,
+  categorySlug
+}: ProductsweOfferCardprops) {
   return (
    <section
 
@@ -24,9 +25,9 @@ function ServicesweOfferCard({
 >
 
 
-      <section className="w-full relative h-full  hover:bg-hover-section transition-colors ease-in-out  bg-section">
+      <section className="w-full relative h-auto  hover:bg-hover-section transition-colors ease-in-out  bg-section">
         <div className=" p-5 xl:p-10 w-full relative h-auto flex flex-col gap-3  ">
-          <h2 className=" text-xl lg:text-3xl xl:text-4xl  font-bold lg:font-semibold text-text-primary ">
+          <h2 className=" text-xl lg:text-3xl xl:text-4xl  font-bold lg:font-semibold text-text-secondary ">
             {title}
           </h2>
           <p className="text-text-secondary font-semibold text-base xl:text-lg line-clamp-2">
@@ -45,7 +46,7 @@ function ServicesweOfferCard({
           )}
           {
             toGoL2Page &&
-            <Link href={`/products/${slug}`} className="text-base font-medium  text-primary px-5 py-2 gap-2  bg-transparent border border-primary hover:bg-primary hover:text-white w-fit flex items-center justify-center">
+            <Link href={`products/${slug}`} className="text-base font-medium  text-primary px-5 py-2 gap-2  bg-transparent border border-primary hover:bg-primary hover:text-white w-fit flex items-center justify-center">
               Explore Product
                <LuArrowUpRight className="text-[20px]" />
             </Link>

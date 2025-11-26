@@ -23,6 +23,7 @@ export interface SectionWrapperprops {
 
 export interface ServicesweOfferCardprops {
   image: string;
+ 
   title: string;
   subtitle: string;
   descrtiption: string;
@@ -32,6 +33,21 @@ export interface ServicesweOfferCardprops {
   GoL2BtnText?:string
 
 }
+
+export interface ProductsweOfferCardprops {
+  image: string;
+  category?: string
+  categorySlug?: string,
+  title: string;
+  subtitle: string;
+  descrtiption: string;
+  direction: boolean;
+  slug:string,
+  toGoL2Page?:boolean
+  GoL2BtnText?:string
+
+}
+
 
 export interface WhyChooseCardProps {
   image: string;
@@ -125,6 +141,10 @@ export interface ModelProps {
 
 export interface ServiceWeOfferProps {
   data: ServicesweOfferCardprops[];
+}
+
+export interface ProductsWeOfferProps {
+  data: ProductsweOfferCardprops[];
 }
 
 export interface WhyChooseUsProps {

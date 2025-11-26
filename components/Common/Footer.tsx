@@ -67,7 +67,7 @@ function Footer() {
   }
 
  return (
-<footer className="w-full relative h-auto flex bg-accent flex-col gap-1">
+<footer className="w-full relative h-auto flex bg-white flex-col gap-1">
   <section className="w-full relative logistics-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-10 lg:py-20">
 
     {/* COLUMN 1 — Logo + Why Us */}
@@ -80,7 +80,7 @@ function Footer() {
         className="object-contain xl:ml-[-6]"
       />
 
-      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-primary">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Why Rhosigma?
       </h2>
 
@@ -92,7 +92,7 @@ function Footer() {
 
     {/* COLUMN 2 — Useful Links */}
     <div className="flex flex-col gap-5">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-primary">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Useful Links
       </h2>
 
@@ -138,7 +138,7 @@ function Footer() {
 
     {/* COLUMN 3 — Contact + Social */}
     <div className="flex flex-col gap-5">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-primary">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Have a Question?
       </h2>
 
@@ -194,7 +194,7 @@ function Footer() {
 
     {/* COLUMN 4 — Address */}
     <div className="flex flex-col gap-5">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-primary">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Rhosigma
       </h2>
 
@@ -203,7 +203,7 @@ function Footer() {
         Kausa Mumbra, Thane 400612.
       </p>
 
-      <h3 className="font-semibold text-text-primary text-base md:text-lg pt-2">
+      <h3 className="font-semibold text-text-secondary text-base md:text-lg pt-2">
         Branch Office
       </h3>
 

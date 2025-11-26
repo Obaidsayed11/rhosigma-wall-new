@@ -4,37 +4,24 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProductsByCategory } from "@/lib/productsData";
 
-interface PageProps {
-  params: {
-    category: string;
-  };
-}
-
-export default function CategoryPage({ params }: PageProps) {
-  const { category } = params;
-  const products = getProductsByCategory(category);
-
-  if (products.length === 0) {
+export default function CategoryProductList({ category, products }: any) {
+  if (!products || products.length === 0) {
     notFound();
   }
 
   const categoryTitle = products[0].category;
 
-  // Show 6 items initially
   const [visibleCount, setVisibleCount] = useState(3);
-
-  const showMore = () => {
-    setVisibleCount((prev) => prev + 3); // Load 3 more on each click
-  };
-
   const visibleProducts = products.slice(0, visibleCount);
+
+  const showMore = () => setVisibleCount((prev) => prev + 3);
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Breadcrumb */}  
+
+        {/* Breadcrumb */}
         <nav className="mb-8 text-sm">
           <ol className="flex items-center space-x-2">
             <li>
@@ -42,12 +29,6 @@ export default function CategoryPage({ params }: PageProps) {
                 Home
               </Link>
             </li>
-            {/* <li className="text-gray-400">/</li>
-            <li>
-              <Link href="/products" className="text-gray-500 hover:text-gray-700">
-                Products
-              </Link>
-            </li> */}
             <li className="text-gray-400">/</li>
             <li className="text-gray-900 font-medium">{categoryTitle}</li>
           </ol>
@@ -65,11 +46,11 @@ export default function CategoryPage({ params }: PageProps) {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleProducts.map((product) => (
+          {visibleProducts.map((product: any) => (
             <Link
               key={product.id}
               href={`/products/${category}/${product.slug}`}
-              className="group bg-white shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="group bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="relative aspect-square w-full overflow-hidden">
                 <Image
@@ -112,7 +93,7 @@ export default function CategoryPage({ params }: PageProps) {
           <div className="text-center mt-10">
             <button
               onClick={showMore}
-              className=" hover:bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary hover:text-primary bg-primary text-white transition-colors"
+              className="hover:bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary hover:text-primary bg-primary text-white transition-colors"
             >
               View More
             </button>

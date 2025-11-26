@@ -24,34 +24,46 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Lanjekar Logistics | Reliable Logistics & Supply Chain Solutions",
+  title: "Rhosigma Valves | Premium Industrial Valves & Automation Solutions",
   description:
-    "Lanjekar Logistics offers dependable logistics, transportation, and supply chain solutions tailored to businesses across diverse industries. Delivering excellence, efficiency, and on-time shipments.",
-  metadataBase: new URL("https://lanjekarlogistics.com"),
+    "Rhosigma Valves specializes in high-quality industrial valves, actuators, and flow control solutions designed for precision, durability, and reliable performance across industries.",
+  metadataBase: new URL("https://rhosigmavalves.com"),
+
   twitter: {
     card: "summary_large_image",
-    title: "Lanjekar Logistics | Trusted Logistics Partner",
+    title: "Rhosigma Valves | Trusted Industrial Valve Manufacturer",
     description:
-      "Discover Lanjekar Logistics – your trusted partner for transportation, supply chain, and freight solutions. Serving industries with speed and reliability.",
+      "Explore Rhosigma Valves – your reliable partner for industrial valves, actuators, and automated flow control systems. Engineered for performance and longevity.",
     images: "/opengraph-image.png",
-    site: "@lanjekarlogistics",
+    site: "@rhosigmavalves",
   },
-  keywords:["logistics","lajekar"],
+
+  keywords: [
+    "Rhosigma Valves",
+    "industrial valves",
+    "pneumatic actuators",
+    "automated valve solutions",
+    "butterfly valves",
+    "ball valves",
+    "control valves",
+    "flow control systems",
+  ],
+
   openGraph: {
-    title: "Lanjekar Logistics | Reliable Logistics & Supply Chain Solutions",
+    title: "Rhosigma Valves | Premium Industrial Valves & Automation Solutions",
     description:
-      "Lanjekar Logistics provides expert logistics services including freight transport, warehousing, and supply chain management across industries.",
+      "Rhosigma Valves delivers engineered valve solutions including actuators, butterfly valves, ball valves, and control valves for diverse industrial applications.",
     images: [
       {
-        url: "https://lanjekarlogistics.com/opengraph-image.png",
+        url: "https://rhosigmavalves.com/opengraph-image.png",
         width: 4800,
         height: 2520,
-        alt: "Lanjekar Logistics - Your Trusted Shipment Partner",
+        alt: "Rhosigma Valves - Industrial Valve & Actuation Solutions",
       },
     ],
-    url: "https://lanjekarlogistics.com",
-    locale: "en_us",
-    siteName: "Lanjekar Logistics",
+    url: "https://rhosigmavalves.com",
+    locale: "en_US",
+    siteName: "Rhosigma Valves",
   },
 };
 

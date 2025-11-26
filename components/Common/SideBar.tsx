@@ -38,7 +38,7 @@ function SideBar({ children }: { children: React.ReactNode }) {
       <SheetContent side="right" className="max-w-[600px] z-50 bg-white">
         <SheetHeader className="flex items-start justify-start ">
           <Image
-            src={"/Logo.png"}
+           src={"/rhosigma-logo.svg"}
             alt="logistics logo"
             height={400}
             width={1000}

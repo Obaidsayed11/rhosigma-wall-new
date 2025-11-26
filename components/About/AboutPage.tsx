@@ -421,7 +421,7 @@ function AboutPage() {
       <WhoWeAre />
       <SectionWrapper
         id="team"
-        css=""
+        css="!mt-20"
         title={"Our Team"}
         description={"Meet Our Dynamic Team Members"}
       >
@@ -435,7 +435,7 @@ function AboutPage() {
       >
         <WhereToInstall />
       </SectionWrapper>
-
+{/* 
       <SectionWrapper
         id="certifications"
         css="bg-[#FFFFFF]"
@@ -443,7 +443,7 @@ function AboutPage() {
         description={"Elevated Excellence in Certified Standards."}
       >
         <CertificatesPage />
-      </SectionWrapper>
+      </SectionWrapper> */}
 
       {/* <SectionWrapper
         css=""

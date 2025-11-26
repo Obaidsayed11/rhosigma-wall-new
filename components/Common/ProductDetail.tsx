@@ -5,12 +5,18 @@ import Image from "next/image";
 import { ProductDataProps } from "@/lib/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay, FreeMode } from "swiper/modules";
-import { ChevronLeft, ChevronRight, DownloadCloudIcon, DownloadIcon } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  DownloadCloudIcon,
+  DownloadIcon,
+} from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
+import CatalogueModal from "./CatalogueModal";
 
 interface ProductDetailProps {
   product?: ProductDataProps;
@@ -20,6 +26,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const mainSwiperRef = useRef<any>(null);
+  const [isCatalogueOpen, setIsCatalogueOpen] = useState(false);
 
   const handleThumbnailClick = (index: number) => {
     if (mainSwiperRef.current && mainSwiperRef.current.slideTo) {
@@ -54,8 +61,11 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             </li>
             <li className="text-gray-400">/</li>
             <li>
-              <a href={`/products/${product.categorySlug}`} className="text-gray-500 hover:text-gray-700">
-                {product.categorySlug}
+              <a
+                href={`/products`}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                Products
               </a>
             </li>
             <li className="text-gray-400">/</li>
@@ -90,7 +100,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                       : null,
                 }}
                 loop={hasMultipleImages}
-                className="rounded-lg shadow-lg bg-white overflow-hidden"
+                className=" shadow-lg bg-white overflow-hidden"
               >
                 {product?.images.map((img, idx) => (
                   <SwiperSlide key={idx}>
@@ -108,44 +118,44 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             </div>
 
             {/* Thumbnail Gallery */}
-          {/* Thumbnail Gallery */}
-{hasMultipleImages && (
-  <div className="relative mt-4 flex items-center justify-center mx-auto w-full max-w-md xl:max-w-[500px]">
-    <button
-      onClick={handlePrevClick}
-      className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 flex-shrink-0"
-    >
-      <ChevronLeft className="w-5 h-5" />
-    </button>
+            {/* Thumbnail Gallery */}
+            {hasMultipleImages && (
+              <div className="relative mt-4 flex items-center justify-center mx-auto w-full max-w-md xl:max-w-[500px]">
+                <button
+                  onClick={handlePrevClick}
+                  className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 flex-shrink-0"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
 
-    <div className="flex-1 mx-2 sm:mx-3 overflow-hidden">
-      <Swiper
-        modules={[FreeMode, Thumbs]}
-        onSwiper={setThumbsSwiper}
-        spaceBetween={8}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress
-        breakpoints={{
-          640: {
-            slidesPerView: 4,
-            spaceBetween: 12,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 16,
-          },
-        }}
-      >
-        {product?.images.map((img, idx) => (
-          <SwiperSlide key={idx}>
-            <div
-              onClick={() => handleThumbnailClick(idx)}
-              className={`
+                <div className="flex-1 mx-2 sm:mx-3 overflow-hidden">
+                  <Swiper
+                    modules={[FreeMode, Thumbs]}
+                    onSwiper={setThumbsSwiper}
+                    spaceBetween={8}
+                    slidesPerView={4}
+                    freeMode={true}
+                    watchSlidesProgress
+                    breakpoints={{
+                      640: {
+                        slidesPerView: 4,
+                        spaceBetween: 12,
+                      },
+                      1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                      },
+                    }}
+                  >
+                    {product?.images.map((img, idx) => (
+                      <SwiperSlide key={idx}>
+                        <div
+                          onClick={() => handleThumbnailClick(idx)}
+                          className={`
                 relative 
                 aspect-square 
                 w-full
-                rounded-lg 
+                
                 overflow-hidden 
                 cursor-pointer 
                 transition-all 
@@ -156,27 +166,27 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                     : "border-2 border-gray-200"
                 }
               `}
-            >
-              <Image
-                src={img}
-                alt={`Thumbnail ${idx + 1}`}
-                fill
-                className="object-cover "
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+                        >
+                          <Image
+                            src={img}
+                            alt={`Thumbnail ${idx + 1}`}
+                            fill
+                            className="object-cover "
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
 
-    <button
-      onClick={handleNextClick}
-      className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 flex-shrink-0"
-    >
-      <ChevronRight className="w-5 h-5" />
-    </button>
-  </div>
-)}
+                <button
+                  onClick={handleNextClick}
+                  className="p-2 bg-white rounded-full shadow-md text-gray-700 hover:bg-gray-100 transition z-10 flex-shrink-0"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            )}
           </div>
 
           {/* PRODUCT INFORMATION */}
@@ -191,14 +201,17 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="flex-1 bg-primary text-white px-6 py-3 hover:bg-[#0d9de0] transition font-semibold">
+              <button
+                className="flex-1 hover:bg-transparent px-6 py-3 border border-primary hover:text-primary bg-primary text-white transition-colors font-semibold"
+                onClick={() => setIsCatalogueOpen(true)}
+              >
                 Request Quote
               </button>
               {product.brochureUrl && (
                 <a
                   href={product.brochureUrl}
                   download
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-300  hover:bg-gray-50 transition font-semibold"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary  hover:bg-gray-50 transition font-semibold"
                 >
                   {/* <svg
                     className="w-5 h-5"
@@ -213,8 +226,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                       d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     />
                   </svg> */}
-                  <DownloadIcon />
-                  Download Brochure
+                  <DownloadIcon className="text-primary" />
+                 <span className="text-primary">
+                   Download Brochure
+                 </span>
                 </a>
               )}
             </div>
@@ -241,7 +256,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 border-b-2 border-primary pb-2 inline-block">
                 Technical Specifications
               </h2>
-              <div className="bg-white rounded-lg shadow-md overflow-hidden mt-4">
+              <div className="bg-white  shadow-md overflow-hidden mt-4">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <tbody>
@@ -265,6 +280,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 </div>
               </div>
             </div>
+            <CatalogueModal
+              isOpen={isCatalogueOpen}
+              onClose={() => setIsCatalogueOpen(false)}
+            />
           </div>
         </div>
       </div>

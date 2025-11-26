@@ -10,6 +10,7 @@ import IndustriesWeServe from "@/components/Common/IndustriesWeServe";
 import TechnologySection from "@/components/Common/TechnologySection";
 import { CheckCircle, Lightbulb, Cog } from "lucide-react";
 import {
+  ProductsweOfferCardprops,
   ServicesweOfferCardprops,
   WhyChooseCardProps,
 } from "@/types/Interface";
@@ -70,9 +71,10 @@ const ServiceweOffer: ServicesweOfferCardprops[] = [
   },
 ];
 
-const OurProductsData: ServicesweOfferCardprops[] = [
+const OurProductsData: ProductsweOfferCardprops[] = [
   {
     title: "Actuator Operated",
+
     subtitle: "Rubber Lined Lug Type Butterfly Valve",
     descrtiption:
       " Rhosigma offers rubber lined butterfly valve for HVAC & utilities. These valves are truly Fit & Forget Valve which requires minimum maintenance. The body line which also function as per soft seat, comes in integrally moulded version and offers bi-directional sealing against vacuum up to the pressure of PN 10 / PN 16 Size Range: 1.1/2” to 28” (50mm to 700mm).",
@@ -262,9 +264,9 @@ const TechnologySectiondata = [
 ];
 
 export const metadata = mergeMetadata({
-  title: "Logistics Services Across India | Lanjekar Logistics",
+ title: "Rhosigma Valves | Premium Industrial Valves & Automation Solutions",
   description:
-    "Lanjekar Logistics offers professional logistics services across India. We ensure safe, timely delivery of cargo, freight, and custom transport solutions.",
+    "Rhosigma Valves specializes in high-quality industrial valves, actuators, and flow control solutions designed for precision, durability, and reliable performance across industries.",
   robots: {
     index: true,
     follow: true,
@@ -273,9 +275,9 @@ export const metadata = mergeMetadata({
     "max-video-preview": -1,
   },
   openGraph: {
-    title: "Logistics Services Across India | Lanjekar Logistics",
+   title: "Rhosigma Valves | Premium Industrial Valves & Automation Solutions",
     description:
-      "Lanjekar Logistics offers professional logistics services across India. We ensure safe, timely delivery of cargo, freight, and custom transport solutions.",
+      "Rhosigma Valves delivers engineered valve solutions including actuators, butterfly valves, ball valves, and control valves for diverse industrial applications.",
     url: "/",
   },
   alternates: {
@@ -289,7 +291,7 @@ export default function Home() {
       <Hero />
       <SectionWrapper
        id="whereToinstall"
-        css=""
+        css="!mt-10"
         title={"Where to install"}
         description={"Ideal Installation Locations for Products."}
        
@@ -298,7 +300,7 @@ export default function Home() {
       </SectionWrapper>
 
       <SectionWrapper
-        css="bg-[#FFFFFF]"
+        css="bg-[#FFFFFF] !-mt-20"
         title={"About Us"}
         description={"Crafting Excellence in Valve Automation."}
       >
@@ -334,7 +336,7 @@ export default function Home() {
 
       <SectionWrapper
         css="bg-[#FFFFFF]"
-        title={"clients-references"}
+        title={"Our Clients"}
         description={"WE WANT TO HELP YOU TO FIND THE RIGHT DECISION!"}
       >
         <TrustedPatner />

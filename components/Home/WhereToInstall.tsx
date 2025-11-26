@@ -75,13 +75,13 @@ function WhereToInstall() {
 
   
   return (
-    <section className="w-full relative h-auto" >
+    <section className="w-full relative h-[40%] mb-auto" >
       <div className="w-full mx-auto ">
    <Swiper
   modules={[Autoplay, Pagination, FreeMode]}
   spaceBetween={0}
   slidesPerView="auto"
-  speed={3000}
+  speed={2000}
   autoplay={{
     delay: 0,
     disableOnInteraction: false,
