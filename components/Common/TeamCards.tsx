@@ -15,11 +15,11 @@ export default function TeamCards() {
     },
     {
       id: 2,
-      name: "MR. Saeed Lanjekar",
-      profile: "/profile.webp",
+      name: "MR. Salman Lanjekar",
+      profile: "/profile-2.webp",
       role: "DIRECTOR - ADMINISTRATION",
       bio: "He is 39 years of age with graduation in BBA and after his graduation started a business in the field of fabrication in PVC and aluminium doors, partition and windows and after decade of experience in business. He is having decade of years experience to manage operations.",
-      linkedin: "https://www.linkedin.com/in/lanjekar-saeed/"
+      linkedin: "https://www.linkedin.com/in/salman-lanjekar-70a852171/"
     },
     {
       id: 3,

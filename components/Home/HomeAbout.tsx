@@ -69,11 +69,11 @@ function HomeAbout() {
                ))}
              </div>
         {/* Images Grid */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6 -mb-30 h-[100%]">
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 -mb-30 h-[90%] ">
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative aspect-square bg-gradient-to-br from-white to-gray-50  shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-all w-[100%] h-[80%]"
+              className="relative aspect-square bg-gradient-to-br from-white to-gray-50  shadow-lg border border-gray-100 overflow-hidden group hover:shadow-xl transition-all w-[100%] h-[100%] xl:-mt-10"
             >
               <Image
                 src={image.src}

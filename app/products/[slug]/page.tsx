@@ -4,16 +4,13 @@ import ProductDetail from "@/components/Common/ProductDetail";
 
 interface PageProps {
   params: {
-    categorySlug: string
     slug: string;
   };
 }
 
 // Generate static paths for all products
 export async function generateStaticParams() {
-
   return productsData.map((p) => ({
-    categorySlug: p.categorySlug,
     slug: p.slug,
   }));
 }
@@ -72,5 +69,5 @@ export default function ProductPage({ params }: PageProps) {
 
   if (!product) notFound();
 
-  return <ProductDetail product={product} />;
+  return <ProductDetail product={product} category={product.category} categorySlug={product.categorySlug} />;
 }

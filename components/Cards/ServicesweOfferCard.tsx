@@ -17,6 +17,8 @@ function ServicesweOfferCard({
   categorySlug
 }: ProductsweOfferCardprops) {
   return (
+    <>
+    
    <section
 
   className={`w-full relative h-full 
@@ -40,7 +42,7 @@ function ServicesweOfferCard({
           {!toGoL2Page && (
             <Button
               css="bg-transparent w-fit px-3 lg:px-5 py-2 lg:py-3 border border-primary text-primary hover:bg-primary hover:text-white  "
-              text="Get a Quote"
+              text="Explore Product"
               isIcons={true}
             />
           )}
@@ -68,6 +70,15 @@ function ServicesweOfferCard({
 />
 
     </section>
+   
+            
+       
+          
+          
+         
+    </>
+
+    
   );
 }
 

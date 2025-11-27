@@ -203,14 +203,14 @@ function Footer() {
         Kausa Mumbra, Thane 400612.
       </p>
 
-      <h3 className="font-semibold text-text-secondary text-base md:text-lg pt-2">
+      {/* <h3 className="font-semibold text-text-secondary text-base md:text-lg pt-2">
         Branch Office
       </h3>
 
       <p className="text-text-secondary text-sm md:text-base leading-relaxed">
         602-B, Virani Business Center, Opp Bharat Gears Limited,
         Kausa Mumbra, Thane 400612.
-      </p>
+      </p> */}
     </div>
 
   </section>

@@ -142,15 +142,16 @@ console.log(token , "token")
         <p ref={errorref} className="text-base font-medium"></p>
 
       </div>
-      <p className="flex items-center justify-center text-center flex-wrap text-text-secondary">
-        by contacting us, you agree to our{" "}
-        <Link
+      <p className="flex items-center justify-center text-center flex-wrap text-text-secondary mx-auto ">
+        by contacting us, you agree to our{" "} <br/>
+         Terms of service & Privacy Policy
+        {/* <Link
           href="/privacy-policy"
           className="text-text-secondary font-semibold "
         >
           {" "}
           Terms of service & Privacy Policy
-        </Link>
+        </Link> */}
       </p>
     </form>
   );

@@ -21,6 +21,8 @@ import GlobalLeader from "@/components/Home/GlobalLeader";
 import ProductsSection from "@/components/Home/ProductsSection";
 import WhereToInstall from "@/components/Home/WhereToInstall";
 import { productsData } from "@/lib/productsTitle";
+import Link from "next/link";
+import { LuArrowUpRight } from "react-icons/lu";
 
 const ServiceweOffer: ServicesweOfferCardprops[] = [
   {
@@ -285,6 +287,9 @@ export const metadata = mergeMetadata({
   },
 });
 
+
+const slug = OurProductsData.map((item,index)=> item.slug)
+
 export default function Home() {
   return (
     <>
@@ -314,15 +319,19 @@ export default function Home() {
       >
         <ServicesWeOffer data={ServiceweOffer} />
       </SectionWrapper> */}
-      <SectionWrapper
-        css=""
-        title={"Our Products"}
-        description={
-          "Flow Control And Valve Automation Expert"
-        }
-      >
-        <OurProducts data={OurProductsData} />
-      </SectionWrapper>
+        <SectionWrapper
+          css=""
+          title={"Our Products"}
+          description={
+            "Flow Control And Valve Automation Expert"
+          }
+        >
+          <OurProducts data={OurProductsData} />
+            <Link href={`/products`} className="relative text-base font-medium  text-primary px-5 py-2 gap-2  bg-transparent border border-primary hover:bg-primary hover:text-white w-fit flex items-center !justify-center mx-auto">
+                View More Product
+                <LuArrowUpRight className="text-[20px]" />
+              </Link>
+        </SectionWrapper>
 
       <SectionWrapper
         css=""

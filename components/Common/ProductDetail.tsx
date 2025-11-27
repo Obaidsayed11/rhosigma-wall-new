@@ -2,13 +2,13 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ProductDataProps } from "@/lib/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Autoplay, FreeMode } from "swiper/modules";
 import {
   ChevronLeft,
   ChevronRight,
-  DownloadCloudIcon,
   DownloadIcon,
 } from "lucide-react";
 
@@ -17,12 +17,15 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import CatalogueModal from "./CatalogueModal";
+import DynamicProductTabs from "./DynamicProductTabs";
 
 interface ProductDetailProps {
-  product?: ProductDataProps;
+  product: ProductDataProps;
+  category: string;
+  categorySlug: string;
 }
 
-export default function ProductDetail({ product }: ProductDetailProps) {
+export default function ProductDetail({ product, category, categorySlug }: ProductDetailProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const mainSwiperRef = useRef<any>(null);
@@ -55,18 +58,27 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         <nav className="mb-6 sm:mb-8 text-xs sm:text-sm">
           <ol className="flex items-center space-x-2 flex-wrap">
             <li>
-              <a href="/" className="text-gray-500 hover:text-gray-700">
+              <Link href="/" className="text-gray-500 hover:text-gray-700">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="text-gray-400">/</li>
             <li>
-              <a
-                href={`/products`}
+              <Link
+                href="/products"
                 className="text-gray-500 hover:text-gray-700"
               >
                 Products
-              </a>
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li>
+              <Link
+                href={`/products#${category}`}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                {category}
+              </Link>
             </li>
             <li className="text-gray-400">/</li>
             <li className="text-gray-900 font-medium line-clamp-1">
@@ -78,7 +90,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* IMAGE GALLERY */}
-          <div className="w-full">
+          <div className="w-full xl:top-8 xl:self-start  xl:sticky lg:top-8 lg:self-start lg:sticky">
             {/* Main Image Swiper */}
             <div className="relative">
               <Swiper
@@ -100,7 +112,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                       : null,
                 }}
                 loop={hasMultipleImages}
-                className=" shadow-lg bg-white overflow-hidden"
+                className="shadow-lg bg-white overflow-hidden"
               >
                 {product?.images.map((img, idx) => (
                   <SwiperSlide key={idx}>
@@ -117,7 +129,6 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               </Swiper>
             </div>
 
-            {/* Thumbnail Gallery */}
             {/* Thumbnail Gallery */}
             {hasMultipleImages && (
               <div className="relative mt-4 flex items-center justify-center mx-auto w-full max-w-md xl:max-w-[500px]">
@@ -152,26 +163,25 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                         <div
                           onClick={() => handleThumbnailClick(idx)}
                           className={`
-                relative 
-                aspect-square 
-                w-full
-                
-                overflow-hidden 
-                cursor-pointer 
-                transition-all 
-                duration-200
-                ${
-                  activeIndex === idx
-                    ? "border-2 border-primary"
-                    : "border-2 border-gray-200"
-                }
-              `}
+                            relative 
+                            aspect-square 
+                            w-full
+                            overflow-hidden 
+                            cursor-pointer 
+                            transition-all 
+                            duration-200
+                            ${
+                              activeIndex === idx
+                                ? "border-2 border-primary"
+                                : "border-2 border-gray-200"
+                            }
+                          `}
                         >
                           <Image
                             src={img}
                             alt={`Thumbnail ${idx + 1}`}
                             fill
-                            className="object-cover "
+                            className="object-cover"
                           />
                         </div>
                       </SwiperSlide>
@@ -211,25 +221,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                 <a
                   href={product.brochureUrl}
                   download
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary  hover:bg-gray-50 transition font-semibold"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary hover:bg-gray-50 transition font-semibold"
                 >
-                  {/* <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg> */}
                   <DownloadIcon className="text-primary" />
-                 <span className="text-primary">
-                   Download Brochure
-                 </span>
+                  <span className="text-primary">Download Brochure</span>
                 </a>
               )}
             </div>
@@ -256,7 +251,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 border-b-2 border-primary pb-2 inline-block">
                 Technical Specifications
               </h2>
-              <div className="bg-white  shadow-md overflow-hidden mt-4">
+              <div className="bg-white shadow-md overflow-hidden mt-4">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <tbody>
@@ -286,6 +281,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             />
           </div>
         </div>
+      </div>
+      <div className="max-w-7xl mx-auto overflow-x-auto mt-20">
+
+      <DynamicProductTabs />
       </div>
     </div>
   );

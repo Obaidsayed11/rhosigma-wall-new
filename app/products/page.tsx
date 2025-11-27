@@ -18,5 +18,7 @@ export default function ProductsPage() {
     return acc;
   }, {});
 
+  console.log(groupedProducts,"grouped")
+
   return <AllProductsList groupedProducts={groupedProducts} />;
 }
