@@ -143,15 +143,22 @@ console.log(token , "token")
 
       </div>
       <p className="flex items-center justify-center text-center flex-wrap text-text-secondary mx-auto ">
-        by contacting us, you agree to our{" "} <br/>
-         Terms of service & Privacy Policy
-        {/* <Link
+        by contacting us, you agree to our{" "} 
+       <Link
+          href="/privacy-policy"
+          className="text-text-secondary font-semibold "
+        >
+          {" "}
+          Terms of service
+        </Link> 
+        <span className="text-text-secondary font-semibold ">&</span>
+        <Link
           href="/privacy-policy"
           className="text-text-secondary font-semibold "
         >
           {" "}
           Terms of service & Privacy Policy
-        </Link> */}
+        </Link> 
       </p>
     </form>
   );

@@ -20,9 +20,9 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
   });
 
   return (
-    <section className="w-full h-auto">
+    <section className="w-full h-auto xl:-mt-14">
       <div className="logistics-container flex flex-col gap-10">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 xl:mt-[-28]">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 ">
           Our Products
         </h2>
 
@@ -49,14 +49,14 @@ function ProductsSection({ data }: TechnologySectiondataProps) {
                 >
                   <span
                     className="
-    relative 
-    text-slate-300 
-    group-hover:text-white 
-    transition-all 
-    duration-300 
-    text-sm sm:text-base
-    block
-  "
+                    relative 
+                    text-slate-300 
+                    group-hover:text-white 
+                    transition-all 
+                    duration-300 
+                    text-sm sm:text-base
+                    block
+                  "
                   >
                     {product.title}
 

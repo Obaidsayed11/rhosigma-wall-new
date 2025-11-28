@@ -80,9 +80,9 @@ function Footer() {
         className="object-contain xl:ml-[-6]"
       />
 
-      <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
+      {/* <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Why Rhosigma?
-      </h2>
+      </h2> */}
 
       <p className="text-text-secondary text-sm md:text-base leading-relaxed font-normal">
         Rhosigma having years of experience in valve automation and having production knowledge for any types of valves automation.
@@ -91,44 +91,44 @@ function Footer() {
     </div>
 
     {/* COLUMN 2 — Useful Links */}
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 xl:ml-20">
       <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Useful Links
       </h2>
 
       <div className="flex flex-col gap-2">
 
+        <Link href="/home" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
+          <span className="relative block">
+            Home
+            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </Link>
+
         <Link href="/about" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
           <span className="relative block">
-            About
-            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
-          </span>
-        </Link>
-
-        <Link href="/about/#team" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
-          <span className="relative block">
-            Our Team
-            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
-          </span>
-        </Link>
-
-        <Link href="#whereToinstall" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
-          <span className="relative block">
-            Where To Install
-            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
-          </span>
-        </Link>
-
-        <Link href="/about/#certifications" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
-          <span className="relative block">
-            Our Certification
+            About Us
             <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
           </span>
         </Link>
 
         <Link href="/contact" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
           <span className="relative block">
-            Contact Us
+            Contact
+            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </Link>
+
+        <Link href="/about/#certifications" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
+          <span className="relative block">
+            Carriers
+            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </Link>
+
+        <Link href="/faqs" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
+          <span className="relative block">
+            FAQ's
             <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
           </span>
         </Link>
@@ -137,7 +137,7 @@ function Footer() {
     </div>
 
     {/* COLUMN 3 — Contact + Social */}
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 ">
       <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-text-secondary">
         Have a Question?
       </h2>
@@ -155,9 +155,10 @@ function Footer() {
             <Image height={20} width={20} alt="Phone" src="/phone.svg" />
           </div>
 
-          <span className="relative after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-            +91 75739 03976
+          <span className="relative after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full text-sm">
+            +91 75739 03976 / 
           </span>
+           <span  className="relative after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full text-sm">91 - 8655587403</span>
         </Link>
 
         <Link href="mailto:info@rhosigma.in"
@@ -225,8 +226,11 @@ function Footer() {
     /> */}
 
     <div className="w-fit px-10  flex flex-col lg:flex-row items-center gap-3 md:gap-5 justify-start border-primary">
+      <p className="text-sm lg:text-base font-medium text-text-secondary text-start">
+      Copyright © {new Date().getFullYear()} Rhosigma Engineering & Automation PVT. LTD. - All Rights Reserved
+    </p>
 
-      <Link
+      {/* <Link
         className="group flex items-center gap-3 text-sm lg:text-base text-text-secondary hover:text-primary transition-all"
         href={"tel:8655587403"}
       >
@@ -250,12 +254,15 @@ function Footer() {
         <span className="relative after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
           sales@rhosigma.in
         </span>
-      </Link>
+      </Link> */}
 
     </div>
 
     <p className="text-sm lg:text-base font-medium text-text-secondary text-start">
-      Copyright © {new Date().getFullYear()} Rhosigma - All Rights Reserved
+    Designed & Maintained by <span  className="text-text-primary text-md font-bold">
+      <a href="https://sovorun.com/">
+      Sovorun
+      </a></span> 
     </p>
   </section>
 </footer>

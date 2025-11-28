@@ -139,14 +139,14 @@ function FaqsForm() {
 
       <div className="w-full relative h-auto flex flex-col gap-3">
         <h2 className=" text-xl lg:text-2xl font-medium text-primary">
-          Lanjekar Support Team
+          Rhosigma Support Team
         </h2>
         <span className="w-full relative flex flex-col gap-1">
           <h2 className=" text-sm md:text-base font-medium text-text-primary">
             Customer Support:
           </h2>
           <p className="text-text-secondary font-medium text-base flex items-center gap-2">
-            support@lanjekarlogistics.com
+            support@rhosigma.com
             {isCopy === "support@lanjekarlogistics.com" ? (
               <IoCheckmarkDone className="text-[20px] text-text-secondary cursor-pointer " />
             ) : (
@@ -162,8 +162,8 @@ function FaqsForm() {
             WhatsApp:
           </h2>
           <p className="text-text-secondary font-medium text-base flex items-center gap-2">
-            (+91) 98765 43210
-            {isCopy === "(+91) 98765 43210" ? (
+            (+ 91) 8655587403
+            {isCopy === "(+ 91) 8655587403" ? (
               <IoCheckmarkDone className="text-[20px] text-text-secondary cursor-pointer " />
             ) : (
               <FaRegCopy
@@ -175,8 +175,7 @@ function FaqsForm() {
         </span>
 
         <p className="text-sm font-medium text-text-primary">
-          © {new Date().getFullYear()} Lanjekar Logistics Pvt. Ltd. All Rights
-          Reserved
+          © {new Date().getFullYear()} Rhosigma Engineering & Automation PVT. LTD. - All Rights Reserved
         </p>
       </div>
     </form>

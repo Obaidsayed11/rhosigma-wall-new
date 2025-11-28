@@ -107,6 +107,9 @@ function WhereToInstall() {
       slidesPerView: 3,
     },
     1024: {
+      slidesPerView: 3,
+    },
+     1324: {
       slidesPerView: 4,
     },
   }}
@@ -123,14 +126,14 @@ function WhereToInstall() {
         </div>
         <div className="w-full hover:bg-gray-50 transition-colors ease-in-out relative h-auto flex flex-col gap-3 md:gap-4 py-4 lg:py-5 px-5 flex-grow">
           <span className="w-full relative h-auto flex items-center justify-between gap-1">
-            <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-800">
+            <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-800 line-clamp-2">
               {group.title}
             </h2>
             <p className="text-sm md:text-2xl font-semibold text-primary">
               {group.number}
             </p>
           </span>
-          <p className="text-sm md:text-base font-medium text-gray-600 line-clamp-4">
+          <p className="text-sm md:text-base font-medium text-gray-600 ">
             {group.description}
           </p>
           <button className="bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors  text-sm md:text-base font-medium flex items-center gap-2"

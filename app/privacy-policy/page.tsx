@@ -2,6 +2,7 @@ import React from "react";
 import PrivacyPolicyPage from "@/components/privacypolicypage/PrivacyPolicyPage";
 import BlogpageBanner from "@/components/blogs/Blogpagebanner";
 import { mergeMetadata } from "../layout";
+import PrivacyHero from "@/components/Common/PrivacyHero";
 export const metadata = mergeMetadata({
   title: "Privacy Policy | Lanjekar Logistics",
   description:
@@ -27,11 +28,12 @@ export const metadata = mergeMetadata({
 function page() {
   return (
     <>
-    <BlogpageBanner
+    {/* <BlogpageBanner
         firstchunktitle={"They call us the"}
         maintitle={"people"}
         lastchunktitle="behind shipments"
-      />
+      /> */}
+      <PrivacyHero />
       <PrivacyPolicyPage />
     </>
   );

@@ -126,7 +126,7 @@ function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="logistics-container">
+  <div className="logistics-container">
         <div className="flex items-center justify-between h-20 lg:h-20 xl:h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
@@ -140,10 +140,10 @@ function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-1 xl:ml-50">
+          <ul className="hidden lg:flex items-center gap-1 min-[1350px]:gap-1 xl:ml-40 lg:ml-40">
             <Link
               href="/"
-              className={`relative inline-block px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
+              className={`relative inline-block px-3 min-[1350px]:px-5 xl:px-6 py-2 text-[16px] min-[1350px]:text-[18px] font-medium transition-all group ${
                 path === "/"
                   ? "text-primary"
                   : "text-gray-700 hover:text-primary"
@@ -163,7 +163,7 @@ function Navbar() {
 
             <Link
               href="/about"
-              className={`relative inline-block px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
+              className={`relative inline-block px-3 min-[1350px]:px-5 xl:px-6 py-2 text-[16px] min-[1350px]:text-[18px] font-medium transition-all group lg:truncate lg:line-clamp-2 ${
                 path === "/about"
                   ? "text-primary"
                   : "text-gray-700 hover:text-primary"
@@ -221,7 +221,7 @@ function Navbar() {
 
               <Link
               href="/products"
-              className={`relative inline-block px-5 xl:px-6 py-2 text-[18px] font-medium transition-all group ${
+              className={`relative inline-block px-3 min-[1350px]:px-5 xl:px-6 py-2 text-[16px] min-[1350px]:text-[18px] font-medium transition-all group ${
                 path === "/products"
                   ? "text-primary"
                   : "text-gray-700 hover:text-primary"
@@ -261,18 +261,19 @@ function Navbar() {
             {/* Catalogue Button */}
             <button
               onClick={() => setIsCatalogueOpen(true)}
-              className="hidden lg:flex bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors text-sm md:text-base font-medium items-center gap-2 "
+              className="hidden lg:flex bg-transparent w-fit px-2 py-1 md:px-3 min-[1350px]:px-5 md:py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors text-xs min-[1350px]:text-sm md:text-base font-medium items-center gap-1 min-[1350px]:gap-2 lg:truncate lg:line-clamp-2"
             >
-              <Download />
-              <Catalogue />
+              <Download className="w-4 h-4" />
+              <span className="hidden min-[1150px]:inline ">Download Catalogue</span>
             </button>
 
             {/* Contact Button */}
             <Link
               href="/contact"
-              className="hidden lg:flex hover:bg-transparent w-fit px-2 py-1 md:px-5 md:py-3 border border-primary hover:text-primary bg-primary text-white transition-colors text-sm md:text-base font-medium items-center gap-2"
+              className="hidden lg:flex hover:bg-transparent w-fit px-2 py-1 md:px-3 min-[1350px]:px-5 md:py-3 border border-primary hover:text-primary bg-primary text-white transition-colors text-xs min-[1350px]:text-sm md:text-base font-medium items-center gap-1 min-[1350px]:gap-2"
             >
-              Contact Us
+              <span className="hidden min-[1150px]:inline lg:truncate lg:line-clamp-2">Contact Us</span>
+              <span className="min-[1150px]:hidden " >Contact</span>
             </Link>
 
             {/* Mobile Menu */}
