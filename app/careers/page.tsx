@@ -2,6 +2,7 @@ import BlogpageBanner from "@/components/blogs/Blogpagebanner";
 import React from "react";
 import CareerPageSection from "@/components/careers/CareerPageSection";
 import { mergeMetadata } from "../layout";
+import CarrerHero from "@/components/careers/CarrerHero";
 export const metadata = mergeMetadata({
   title: "Careers at Lanjekar Logistics | Join Our Team of Experts",
   description:
@@ -27,17 +28,17 @@ export const metadata = mergeMetadata({
 function page() {
   return (
     <>
-      <BlogpageBanner
+      {/* <BlogpageBanner
         firstchunktitle={"They call us the"}
         maintitle={"people"}
         lastchunktitle="behind shipments"
         btntext="Explore Careers"
-      />
+      /> */}
+      <CarrerHero />
+
       <CareerPageSection />
     </>
   );
 }
 
 export default page;
-
-

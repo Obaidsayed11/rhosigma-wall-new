@@ -141,25 +141,31 @@ console.log(token , "token")
 
         <p ref={errorref} className="text-base font-medium"></p>
 
+     <div className="relative text-center text-text-secondary  space-y-1 justify-center">
+  <p className="mx-auto flex items-center justify-center flex-wrap gap-">
+    By contacting us, you agree to our
+  </p>
+
+  <p className="mx-auto flex items-center justify-center flex-wrap gap-1">
+    <Link
+      href="/privacy-policy"
+      className="font-semibold hover:text-primary transition-colors"
+    >
+      Privacy Policy
+    </Link>
+
+    <span className="font-semibold">&</span>
+
+    <Link
+      href="/termsofservice"
+      className="font-semibold hover:text-primary transition-colors"
+    >
+      Terms of Service
+    </Link>
+  </p>
+</div>
       </div>
-      <p className="flex items-center justify-center text-center flex-wrap text-text-secondary mx-auto ">
-        by contacting us, you agree to our{" "} 
-       <Link
-          href="/privacy-policy"
-          className="text-text-secondary font-semibold "
-        >
-          {" "}
-          Terms of service
-        </Link> 
-        <span className="text-text-secondary font-semibold ">&</span>
-        <Link
-          href="/privacy-policy"
-          className="text-text-secondary font-semibold "
-        >
-          {" "}
-          Terms of service & Privacy Policy
-        </Link> 
-      </p>
+
     </form>
   );
 }

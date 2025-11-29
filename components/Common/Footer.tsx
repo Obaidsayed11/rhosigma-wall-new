@@ -119,7 +119,7 @@ function Footer() {
           </span>
         </Link>
 
-        <Link href="/about/#certifications" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
+        <Link href="/careers" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
           <span className="relative block">
             Carriers
             <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
@@ -129,6 +129,18 @@ function Footer() {
         <Link href="/faqs" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
           <span className="relative block">
             FAQ's
+            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </Link>
+          <Link href="/testimonial" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
+          <span className="relative block">
+           Testimonials
+            <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </Link>
+          <Link href="/qualitypolicy" className="group text-text-secondary text-sm md:text-base font-normal w-fit transition-all">
+          <span className="relative block">
+            Quality Policy
             <span className="absolute left-0 -bottom-[2px] h-[2px] w-0 bg-gradient-to-r from-[#0d9de0] to-[#2e5bab] transition-all duration-300 group-hover:w-full"></span>
           </span>
         </Link>
